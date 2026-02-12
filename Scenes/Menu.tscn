@@ -1,0 +1,44 @@
+[gd_scene format=3 uid="uid://biu3dgotqfxql"]
+
+[ext_resource type="Script" uid="uid://bohe0ut480eqn" path="res://Scenes/MenuButton.cs" id="1_3kf3n"]
+
+[node name="Menu" type="Control" unique_id=741623532]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MainMenu" type="Control" parent="." unique_id=597263134]
+anchors_preset = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+
+[node name="ButtonContainer" type="VBoxContainer" parent="MainMenu" unique_id=1673137748]
+layout_mode = 0
+offset_right = 96.0
+offset_bottom = 171.0
+
+[node name="ResumeButton" type="Button" parent="MainMenu/ButtonContainer" unique_id=814637803]
+layout_mode = 2
+text = "Resume"
+script = ExtResource("1_3kf3n")
+
+[node name="SaveButton" type="Button" parent="MainMenu/ButtonContainer" unique_id=1294961143]
+layout_mode = 2
+text = "Save Game"
+
+[node name="LoadButton2" type="Button" parent="MainMenu/ButtonContainer" unique_id=341993593]
+layout_mode = 2
+text = "Load Game"
+
+[node name="SettingsButton" type="Button" parent="MainMenu/ButtonContainer" unique_id=955101355]
+layout_mode = 2
+text = "Settings"
+
+[node name="QuitButton" type="Button" parent="MainMenu/ButtonContainer" unique_id=1436460705]
+layout_mode = 2
+text = "Quit"
+
+[connection signal="pressed" from="MainMenu/ButtonContainer/ResumeButton" to="MainMenu/ButtonContainer/ResumeButton" method="OnPressed"]
