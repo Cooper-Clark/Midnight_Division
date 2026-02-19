@@ -1,0 +1,14 @@
+extends Node
+class_name LoadGameItem
+
+@onready var saveNameLabel: Label = $Panel/VBoxContainer/SaveNameLabel
+@onready var dateLabel: Label = $Panel/VBoxContainer/DateLabel
+@onready var versionLabel: Label = $Panel/VBoxContainer/VersionLabel
+@onready var infoLabel: Label = $Panel/VBoxContainer/InfoLabel
+
+var saveInfoDict: Dictionary[String, Variant] = {
+	"Name": "Name", # Placeholder, but is important
+	"Date": "01/01/01", # Placeholder, Check https://docs.godotengine.org/en/stable/classes/class_time.html
+	"Version": "0.01", # Placeholder, but is important
+	"SomeInfo": 1 # Placeholder, not important will be replaced by relevant information
+}

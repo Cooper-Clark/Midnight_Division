@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://cl1kq17aeq5u3"]
+
+[ext_resource type="Script" uid="uid://2a7pwso2wxrt" path="res://Scripts/UI/LoadMenu/LoadMenuManager.gd" id="1_wnpq6"]
+
+[node name="LoadMenuManager" type="Node" unique_id=1711276817]
+script = ExtResource("1_wnpq6")
