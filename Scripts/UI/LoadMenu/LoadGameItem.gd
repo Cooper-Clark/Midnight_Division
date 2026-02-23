@@ -12,3 +12,9 @@ var saveInfoDict: Dictionary[String, Variant] = {
 	"Version": "0.01", # Placeholder, but is important
 	"SomeInfo": 1 # Placeholder, not important will be replaced by relevant information
 }
+
+func UpdateItemInfo() -> void:
+	saveNameLabel.text = saveInfoDict["Name"]
+	dateLabel.text = saveInfoDict["Date"]
+	versionLabel.text = saveInfoDict["Version"]
+	infoLabel.text = str(saveInfoDict["SomeInfo"]) # str will convert the integer into a string
