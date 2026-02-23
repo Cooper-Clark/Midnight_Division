@@ -5,7 +5,6 @@
 [ext_resource type="Script" uid="uid://b1l3rfht82t4e" path="res://Scripts/UI/UIExitButton.gd" id="2_dlxxq"]
 [ext_resource type="PackedScene" uid="uid://cl1kq17aeq5u3" path="res://Scenes/Menus/LoadMenu/LoadMenuManager.tscn" id="3_dlxxq"]
 [ext_resource type="Script" uid="uid://c7l85wopjq60m" path="res://Scripts/UI/LoadMenu/LoadMenu.gd" id="3_gubx4"]
-[ext_resource type="PackedScene" uid="uid://djv02jm4jevsb" path="res://Scenes/Menus/LoadMenu/LoadGameItem.tscn" id="4_tlbd1"]
 
 [node name="Menu" type="Control" unique_id=741623532]
 layout_mode = 3
@@ -62,17 +61,15 @@ script = ExtResource("2_dlxxq")
 [node name="ResumeMenu" type="Control" parent="." unique_id=1874813351]
 visible = false
 anchors_preset = 0
-offset_right = 1920.0
-offset_bottom = 1080.0
-script = ExtResource("3_gubx4")
-LoadGameItemObject = ExtResource("4_tlbd1")
+offset_right = 1152.0
+offset_bottom = 648.0
 
 [node name="Panel" type="Panel" parent="ResumeMenu" unique_id=219548233]
 layout_mode = 0
 offset_left = 64.0
 offset_top = 32.0
-offset_right = 1856.0
-offset_bottom = 1024.0
+offset_right = 1088.0
+offset_bottom = 576.0
 
 [node name="BackButton" type="Button" parent="ResumeMenu" unique_id=924894057 node_paths=PackedStringArray("otherMenu", "currentMenu")]
 layout_mode = 0
@@ -85,20 +82,18 @@ script = ExtResource("1_5x11b")
 otherMenu = NodePath("../../MainMenu")
 currentMenu = NodePath("..")
 
-[node name="LoadMenuManager" parent="ResumeMenu" unique_id=1711276817 instance=ExtResource("3_dlxxq")]
-
 [node name="SaveMenu" type="Control" parent="." unique_id=855119902]
 visible = false
 anchors_preset = 0
-offset_right = 1920.0
-offset_bottom = 1080.0
+offset_right = 1152.0
+offset_bottom = 648.0
 
 [node name="Panel" type="Panel" parent="SaveMenu" unique_id=1526165213]
 layout_mode = 0
 offset_left = 64.0
 offset_top = 32.0
-offset_right = 1856.0
-offset_bottom = 1024.0
+offset_right = 1088.0
+offset_bottom = 576.0
 
 [node name="BackButton" type="Button" parent="SaveMenu" unique_id=201197339 node_paths=PackedStringArray("otherMenu", "currentMenu")]
 layout_mode = 0
@@ -113,15 +108,16 @@ currentMenu = NodePath("..")
 
 [node name="LoadMenu" type="Control" parent="." unique_id=9239599]
 anchors_preset = 0
-offset_right = 1920.0
-offset_bottom = 1080.0
+offset_right = 1152.0
+offset_bottom = 648.0
+script = ExtResource("3_gubx4")
 
 [node name="Panel" type="Panel" parent="LoadMenu" unique_id=1778301428]
 layout_mode = 0
 offset_left = 64.0
 offset_top = 32.0
-offset_right = 1856.0
-offset_bottom = 1024.0
+offset_right = 1088.0
+offset_bottom = 576.0
 
 [node name="BackButton" type="Button" parent="LoadMenu" unique_id=2127060816 node_paths=PackedStringArray("otherMenu", "currentMenu")]
 layout_mode = 0
@@ -138,24 +134,26 @@ currentMenu = NodePath("..")
 layout_mode = 0
 offset_left = 80.0
 offset_top = 88.0
-offset_right = 1848.0
-offset_bottom = 1016.0
+offset_right = 1072.0
+offset_bottom = 560.0
 
-[node name="VBoxContainer" type="VBoxContainer" parent="LoadMenu/ScrollContainer" unique_id=1635764330]
+[node name="ItemContainer" type="VBoxContainer" parent="LoadMenu/ScrollContainer" unique_id=1635764330]
 layout_mode = 2
+
+[node name="LoadMenuManager" parent="LoadMenu" unique_id=1711276817 instance=ExtResource("3_dlxxq")]
 
 [node name="SettingsMenu" type="Control" parent="." unique_id=2135441266]
 visible = false
 anchors_preset = 0
-offset_right = 1920.0
-offset_bottom = 1080.0
+offset_right = 1152.0
+offset_bottom = 648.0
 
 [node name="Panel" type="Panel" parent="SettingsMenu" unique_id=1625406128]
 layout_mode = 0
 offset_left = 64.0
 offset_top = 32.0
-offset_right = 1856.0
-offset_bottom = 1024.0
+offset_right = 1088.0
+offset_bottom = 576.0
 
 [node name="BackButton" type="Button" parent="SettingsMenu" unique_id=821710502 node_paths=PackedStringArray("otherMenu", "currentMenu")]
 layout_mode = 0
@@ -168,4 +166,5 @@ script = ExtResource("1_5x11b")
 otherMenu = NodePath("../../MainMenu")
 currentMenu = NodePath("..")
 
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=757347890]
+[node name="Camera2D" type="Camera2D" parent="." unique_id=2005040556]
+position = Vector2(576, 324)
