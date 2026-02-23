@@ -3,10 +3,13 @@
 [ext_resource type="Script" uid="uid://bdql2gi1sjjmb" path="res://Scripts/UI/LoadMenu/LoadGameItem.gd" id="1_3do4y"]
 
 [node name="LoadGameItem" type="Control" unique_id=694879967]
+custom_minimum_size = Vector2(962, 128)
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_right = -192.0
+offset_bottom = -520.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_3do4y")
