@@ -5,6 +5,8 @@
 [ext_resource type="Script" uid="uid://b1l3rfht82t4e" path="res://Scripts/UI/UIExitButton.gd" id="2_dlxxq"]
 [ext_resource type="PackedScene" uid="uid://cl1kq17aeq5u3" path="res://Scenes/Menus/LoadMenu/LoadMenuManager.tscn" id="3_dlxxq"]
 [ext_resource type="Script" uid="uid://c7l85wopjq60m" path="res://Scripts/UI/LoadMenu/LoadMenu.gd" id="3_gubx4"]
+[ext_resource type="Script" uid="uid://bpm712bg64l0y" path="res://Scripts/UI/SaveMenu/SaveMenu.gd" id="4_q1p65"]
+[ext_resource type="PackedScene" uid="uid://d3gm0o2yl2y5d" path="res://Scenes/Menus/SaveMenu/SaveMenuManager.tscn" id="5_l5f0u"]
 
 [node name="Menu" type="Control" unique_id=741623532]
 layout_mode = 3
@@ -87,6 +89,7 @@ visible = false
 anchors_preset = 0
 offset_right = 1152.0
 offset_bottom = 648.0
+script = ExtResource("4_q1p65")
 
 [node name="Panel" type="Panel" parent="SaveMenu" unique_id=1526165213]
 layout_mode = 0
@@ -106,7 +109,20 @@ script = ExtResource("1_5x11b")
 otherMenu = NodePath("../../MainMenu")
 currentMenu = NodePath("..")
 
+[node name="ScrollContainer" type="ScrollContainer" parent="SaveMenu" unique_id=1724672468]
+layout_mode = 0
+offset_left = 80.0
+offset_top = 88.0
+offset_right = 1072.0
+offset_bottom = 560.0
+
+[node name="ItemContainer" type="VBoxContainer" parent="SaveMenu/ScrollContainer" unique_id=1667798393]
+layout_mode = 2
+
+[node name="SaveMenuManager" parent="SaveMenu" unique_id=701190217 instance=ExtResource("5_l5f0u")]
+
 [node name="LoadMenu" type="Control" parent="." unique_id=9239599]
+visible = false
 anchors_preset = 0
 offset_right = 1152.0
 offset_bottom = 648.0

@@ -1,9 +1,51 @@
 [gd_scene format=3 uid="uid://cykv6ybmfbbi2"]
 
+[ext_resource type="Script" uid="uid://cthhvawvmanrc" path="res://Scripts/UI/SaveMenu/SaveGameItem.gd" id="1_r8q5a"]
+
 [node name="SaveGameItem" type="Control" unique_id=970365692]
+custom_minimum_size = Vector2(962, 128)
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_r8q5a")
+
+[node name="Panel" type="Panel" parent="." unique_id=1366060463]
+layout_mode = 0
+offset_right = 960.0
+offset_bottom = 128.0
+
+[node name="SaveButton" type="Button" parent="Panel" unique_id=698077627]
+layout_mode = 0
+offset_left = 768.0
+offset_top = 8.0
+offset_right = 952.0
+offset_bottom = 120.0
+text = "Save"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel" unique_id=487316608]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 8.0
+offset_right = 760.0
+offset_bottom = 120.0
+
+[node name="SaveNameLabel" type="Label" parent="Panel/VBoxContainer" unique_id=1028116768]
+layout_mode = 2
+text = "Save Name"
+
+[node name="DateLabel" type="Label" parent="Panel/VBoxContainer" unique_id=34341760]
+layout_mode = 2
+text = "Date"
+
+[node name="VersionLabel" type="Label" parent="Panel/VBoxContainer" unique_id=500494053]
+layout_mode = 2
+text = "Version Name"
+
+[node name="InfoLabel" type="Label" parent="Panel/VBoxContainer" unique_id=1801740016]
+layout_mode = 2
+text = "Info"
+
+[connection signal="pressed" from="Panel/SaveButton" to="." method="SaveButtonPressed"]

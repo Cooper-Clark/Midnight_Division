@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://d3gm0o2yl2y5d"]
+
+[ext_resource type="Script" uid="uid://ck5xoxvx4ua7s" path="res://Scripts/UI/SaveMenu/SaveMenuManager.gd" id="1_u7fsw"]
+
+[node name="SaveMenuManager" type="Node" unique_id=701190217]
+script = ExtResource("1_u7fsw")

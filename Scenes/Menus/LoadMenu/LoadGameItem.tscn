@@ -25,7 +25,7 @@ offset_left = 768.0
 offset_top = 8.0
 offset_right = 952.0
 offset_bottom = 120.0
-text = "Load"
+text = "Save"
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Panel" unique_id=1129126510]
 layout_mode = 0
@@ -50,4 +50,4 @@ text = "Version Name"
 layout_mode = 2
 text = "Info"
 
-[connection signal="pressed" from="Panel/LoadButton" to="." method="OnLoadButtonPressed"]
+[connection signal="pressed" from="Panel/LoadButton" to="." method="LoadButtonPressed"]
