@@ -23,7 +23,7 @@ offset_left = 768.0
 offset_top = 8.0
 offset_right = 952.0
 offset_bottom = 120.0
-text = "Save"
+text = "Overwrite"
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Panel" unique_id=487316608]
 layout_mode = 0

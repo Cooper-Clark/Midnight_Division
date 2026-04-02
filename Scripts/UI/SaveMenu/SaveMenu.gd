@@ -43,3 +43,13 @@ func LoadAllSaves(savesList: Array[Dictionary]) -> void:
 	pass
 	# for item in savesList:
 	# AddLoadGameItem(item)
+
+func RefreshAllSaves() -> void:
+	for item: Node in itemContainer.get_children():
+		item.queue_free()
+	_saveMenuManager.CreateSaveList()
+	LoadAllSaves(_saveMenuManager.loadedSaveList)
+
+
+func SaveMenuManagerSaved() -> void:
+	RefreshAllSaves()

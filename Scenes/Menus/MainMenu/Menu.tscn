@@ -121,6 +121,14 @@ layout_mode = 2
 
 [node name="SaveMenuManager" parent="SaveMenu" unique_id=701190217 instance=ExtResource("5_l5f0u")]
 
+[node name="SaveButton" type="Button" parent="SaveMenu" unique_id=404879772]
+layout_mode = 0
+offset_left = 992.0
+offset_top = 48.0
+offset_right = 1075.0
+offset_bottom = 79.0
+text = "New Save"
+
 [node name="LoadMenu" type="Control" parent="." unique_id=9239599]
 visible = false
 anchors_preset = 0
@@ -159,7 +167,6 @@ layout_mode = 2
 [node name="LoadMenuManager" parent="LoadMenu" unique_id=1711276817 instance=ExtResource("3_dlxxq")]
 
 [node name="SettingsMenu" type="Control" parent="." unique_id=2135441266]
-visible = false
 anchors_preset = 0
 offset_right = 1152.0
 offset_bottom = 648.0
@@ -184,3 +191,5 @@ currentMenu = NodePath("..")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=2005040556]
 position = Vector2(576, 324)
+
+[connection signal="Saved" from="SaveMenu/SaveMenuManager" to="SaveMenu" method="SaveMenuManagerSaved"]
