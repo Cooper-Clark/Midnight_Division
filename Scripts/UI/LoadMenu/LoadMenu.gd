@@ -10,7 +10,7 @@ var _loadGameItemObject: PackedScene = preload("res://Scenes/Menus/LoadMenu/Load
 
 var _fakeItem: Dictionary[String, Variant] = {
 	"Name": "Name", # Placeholder, but is important
-	"Date": "01/01/01", # Placeholder, Check https://docs.godotengine.org/en/stable/classes/class_time.html
+	"Date": 1235234, # Placeholder, Check https://docs.godotengine.org/en/stable/classes/class_time.html
 	"Version": "0.01", # Placeholder, but is important
 	
 	"SomeInfo": 1 # Placeholder, not important will be replaced by relevant information
