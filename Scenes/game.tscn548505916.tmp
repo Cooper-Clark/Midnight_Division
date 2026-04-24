@@ -1,0 +1,198 @@
+[gd_scene format=3 uid="uid://c4ars8mpm1ygt"]
+
+[ext_resource type="Script" uid="uid://dyipa5stlcqaj" path="res://scripts/player_mastermind.gd" id="1_yqjtg"]
+[ext_resource type="PackedScene" uid="uid://bc7b1ntmt10uy" path="res://scenes/unit.tscn" id="2_lnu2h"]
+[ext_resource type="PackedScene" uid="uid://du0284x42gvcu" path="res://scenes/wall.tscn" id="3_lnu2h"]
+[ext_resource type="Script" uid="uid://dsi8c6wfd1u8s" path="res://scripts/playerUnitScript.gd" id="4_iywne"]
+[ext_resource type="Script" uid="uid://bw2yq3hxl5jtl" path="res://scripts/enemyUnitScript.gd" id="5_iywne"]
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_y32ns"]
+vertices = PackedVector2Array(527.72656, 321.20313, 812.27344, 321.20313, 1849.8828, 596.8203, 590.1172, 596.8203, 120, 580, 2700, -260, 2700, 3700, 1849.8828, 2043.1797, 120, 1220, 590.1172, 2043.1797, -1260, 3700, -1260, 420, -320, 1220, 420, 30, 420, -30, 812.27344, 178.79688, 527.72656, 178.79688, -20, 640, 60, 640, 60, 1160, -80, 1160, -80, 980, -140, 1160, -260, 1160, -260, 1040, -180, 1040, -140, 980, -180, 980, -260, 980, -260, 920, -180, 920, -140, 920, -180, 860, -260, 860, -260, 640, -140, 640, -80, 920, -80, 580, -20, 580, -720, 280, -720, 360, -1240, 360, -1240, 220, -1060, 220, -1240, 160, -1240, 40, -1120, 40, -1120, 120, -1060, 160, -1060, 120, -1060, 40, -1000, 40, -1000, 120, -1000, 160, -940, 120, -940, 40, -720, 40, -720, 160, -1000, 220, -660, 220, -660, 280, -660, -20, -1260, -20, -1260, -260, -220, -220, -20, 30, 160, 30, 160, 160, -160, 160, -160, -160, -20, -30, 420, -160, 420, -220, -220, 220, 220, 220, 220, 30, -320, 580, -660, 420)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3, 4), PackedInt32Array(5, 6, 7, 2), PackedInt32Array(8, 4, 3, 9), PackedInt32Array(7, 6, 10, 9), PackedInt32Array(9, 10, 11, 12), PackedInt32Array(13, 14, 5, 15, 16), PackedInt32Array(17, 18, 19, 20, 21), PackedInt32Array(22, 23, 24, 25), PackedInt32Array(26, 22, 25, 27), PackedInt32Array(27, 28, 29, 30), PackedInt32Array(26, 27, 30, 31), PackedInt32Array(32, 33, 34, 35), PackedInt32Array(32, 35, 31, 30), PackedInt32Array(21, 26, 31, 36), PackedInt32Array(17, 21, 36), PackedInt32Array(17, 36, 37, 38), PackedInt32Array(39, 40, 41, 42, 43), PackedInt32Array(44, 45, 46, 47), PackedInt32Array(48, 44, 47, 49), PackedInt32Array(49, 50, 51, 52), PackedInt32Array(48, 49, 52, 53), PackedInt32Array(54, 55, 56, 57), PackedInt32Array(54, 57, 53, 52), PackedInt32Array(43, 48, 53, 58), PackedInt32Array(39, 43, 58), PackedInt32Array(39, 58, 59, 60), PackedInt32Array(61, 62, 63, 64), PackedInt32Array(65, 66, 67, 68), PackedInt32Array(65, 68, 69, 70), PackedInt32Array(70, 69, 71, 14), PackedInt32Array(5, 14, 71), PackedInt32Array(5, 71, 72), PackedInt32Array(63, 5, 72, 64), PackedInt32Array(61, 64, 73, 59), PackedInt32Array(60, 59, 73), PackedInt32Array(74, 75, 13, 16, 0), PackedInt32Array(76, 77, 60, 73, 37), PackedInt32Array(2, 1, 15, 5), PackedInt32Array(73, 74, 0, 4, 38), PackedInt32Array(73, 38, 37), PackedInt32Array(77, 76, 12, 11), PackedInt32Array(9, 12, 8)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(2720, 3720, 2720, -280, -1280, -280, -1280, 3720)])
+agent_radius = 20.0
+
+[node name="game" type="Node2D" unique_id=1366043411]
+
+[node name="navMesh" type="NavigationRegion2D" parent="." unique_id=4192704]
+position = Vector2(1280, 280)
+navigation_polygon = SubResource("NavigationPolygon_y32ns")
+
+[node name="Walls" type="Node" parent="navMesh" unique_id=66859610]
+
+[node name="StaticBody2D" parent="navMesh/Walls" unique_id=1456080839 instance=ExtResource("3_lnu2h")]
+position = Vector2(1280, 470)
+scale = Vector2(20, 1)
+
+[node name="StaticBody2D3" parent="navMesh/Walls" unique_id=451749847 instance=ExtResource("3_lnu2h")]
+position = Vector2(1280, 90)
+scale = Vector2(20, 1)
+
+[node name="StaticBody2D5" parent="navMesh/Walls" unique_id=1400359719 instance=ExtResource("3_lnu2h")]
+position = Vector2(1480, 280)
+scale = Vector2(20, 1)
+
+[node name="StaticBody2D7" parent="navMesh/Walls" unique_id=1397588886 instance=ExtResource("3_lnu2h")]
+position = Vector2(1950, 530)
+scale = Vector2(12.226666, 5.1200004)
+
+[node name="StaticBody2D8" parent="navMesh/Walls" unique_id=1744809037 instance=ExtResource("3_lnu2h")]
+position = Vector2(2500, 1600)
+scale = Vector2(-60.98828, -70.31828)
+
+[node name="StaticBody2D2" parent="navMesh/Walls" unique_id=1622691491 instance=ExtResource("3_lnu2h")]
+position = Vector2(1090, 280)
+rotation = 1.5707964
+scale = Vector2(20, 1)
+
+[node name="StaticBody2D4" parent="navMesh/Walls" unique_id=808151265 instance=ExtResource("3_lnu2h")]
+position = Vector2(1470, 380)
+rotation = 1.5707964
+scale = Vector2(10, 1)
+
+[node name="StaticBody2D6" parent="navMesh/Walls" unique_id=341305179 instance=ExtResource("3_lnu2h")]
+position = Vector2(1580, 90)
+rotation = 3.1415927
+scale = Vector2(10, 1)
+
+[node name="House1" type="Node2D" parent="navMesh/Walls" unique_id=1574527591]
+position = Vector2(290, 470)
+rotation = -4.712389
+scale = Vector2(10, 1)
+
+[node name="StaticBody2D8" parent="navMesh/Walls/House1" unique_id=577115617 instance=ExtResource("3_lnu2h")]
+position = Vector2(20, -9.999998)
+rotation = -1.5707964
+scale = Vector2(30, 0.1)
+
+[node name="StaticBody2D15" parent="navMesh/Walls/House1" unique_id=194934607 instance=ExtResource("3_lnu2h")]
+position = Vector2(-7.748604e-07, -160.00006)
+rotation = -1.5707964
+scale = Vector2(15, 0.1)
+
+[node name="StaticBody2D16" parent="navMesh/Walls/House1" unique_id=562983391 instance=ExtResource("3_lnu2h")]
+position = Vector2(3.0398369e-06, 189.99994)
+rotation = -1.5707964
+scale = Vector2(10, 0.1)
+
+[node name="StaticBody2D9" parent="navMesh/Walls/House1" unique_id=1303763739 instance=ExtResource("3_lnu2h")]
+position = Vector2(-18, -9.999998)
+rotation = -1.5707964
+scale = Vector2(30, 0.1)
+
+[node name="StaticBody2D10" parent="navMesh/Walls/House1" unique_id=1790557229 instance=ExtResource("3_lnu2h")]
+position = Vector2(0.9999992, 280)
+rotation = 3.1415918
+scale = Vector2(2, 1)
+
+[node name="StaticBody2D11" parent="navMesh/Walls/House1" unique_id=261744227 instance=ExtResource("3_lnu2h")]
+position = Vector2(-9.000005, -299.99994)
+rotation = 3.1415918
+
+[node name="StaticBody2D12" parent="navMesh/Walls/House1" unique_id=2023070240 instance=ExtResource("3_lnu2h")]
+position = Vector2(15.999976, -300.00018)
+rotation = 3.1415918
+scale = Vector2(0.5, 1)
+
+[node name="StaticBody2D13" parent="navMesh/Walls/House1" unique_id=427898132 instance=ExtResource("3_lnu2h")]
+position = Vector2(-14.000009, 99.99994)
+rotation = 3.1415918
+scale = Vector2(0.5, 1)
+
+[node name="StaticBody2D14" parent="navMesh/Walls/House1" unique_id=823572429 instance=ExtResource("3_lnu2h")]
+position = Vector2(-13.999997, -19.999998)
+rotation = 3.1415918
+scale = Vector2(0.5, 1)
+
+[node name="House2" type="Node2D" parent="navMesh/Walls" unique_id=1068209877]
+position = Vector2(1170, 1190)
+rotation = -6.2831855
+scale = Vector2(10, 1)
+
+[node name="StaticBody2D8" parent="navMesh/Walls/House2" unique_id=1084526276 instance=ExtResource("3_lnu2h")]
+position = Vector2(20, -9.999998)
+rotation = -1.5707964
+scale = Vector2(30, 0.1)
+
+[node name="StaticBody2D15" parent="navMesh/Walls/House2" unique_id=342962005 instance=ExtResource("3_lnu2h")]
+position = Vector2(-7.748604e-07, -160.00006)
+rotation = -1.5707964
+scale = Vector2(15, 0.1)
+
+[node name="StaticBody2D16" parent="navMesh/Walls/House2" unique_id=1446114037 instance=ExtResource("3_lnu2h")]
+position = Vector2(3.0398369e-06, 189.99994)
+rotation = -1.5707964
+scale = Vector2(10, 0.1)
+
+[node name="StaticBody2D9" parent="navMesh/Walls/House2" unique_id=1784892295 instance=ExtResource("3_lnu2h")]
+position = Vector2(-18, -9.999998)
+rotation = -1.5707964
+scale = Vector2(30, 0.1)
+
+[node name="StaticBody2D10" parent="navMesh/Walls/House2" unique_id=1197268791 instance=ExtResource("3_lnu2h")]
+position = Vector2(0.9999992, 280)
+rotation = 3.1415918
+scale = Vector2(2, 1)
+
+[node name="StaticBody2D11" parent="navMesh/Walls/House2" unique_id=1130533610 instance=ExtResource("3_lnu2h")]
+position = Vector2(-9.000005, -299.99994)
+rotation = 3.1415918
+
+[node name="StaticBody2D12" parent="navMesh/Walls/House2" unique_id=1107803861 instance=ExtResource("3_lnu2h")]
+position = Vector2(15.999976, -300.00018)
+rotation = 3.1415918
+scale = Vector2(0.5, 1)
+
+[node name="StaticBody2D13" parent="navMesh/Walls/House2" unique_id=1060250068 instance=ExtResource("3_lnu2h")]
+position = Vector2(-14.000009, 99.99994)
+rotation = 3.1415918
+scale = Vector2(0.5, 1)
+
+[node name="StaticBody2D14" parent="navMesh/Walls/House2" unique_id=448204944 instance=ExtResource("3_lnu2h")]
+position = Vector2(-13.999997, -19.999998)
+rotation = 3.1415918
+scale = Vector2(0.5, 1)
+
+[node name="playerMastermind" type="Node2D" parent="." unique_id=351449607]
+position = Vector2(1300, 300)
+script = ExtResource("1_yqjtg")
+selected = null
+
+[node name="Camera2D" type="Camera2D" parent="playerMastermind" unique_id=341709902]
+
+[node name="AudioListener2D" type="AudioListener2D" parent="playerMastermind/Camera2D" unique_id=638939451]
+current = true
+
+[node name="UI" type="CanvasLayer" parent="." unique_id=1753380571]
+
+[node name="units" type="Node" parent="." unique_id=438359313]
+
+[node name="playerUnits" type="Node" parent="units" unique_id=352092799]
+
+[node name="John Helldiver" parent="units/playerUnits" unique_id=1977838871 instance=ExtResource("2_lnu2h")]
+position = Vector2(1500, 2000)
+script = ExtResource("4_iywne")
+
+[node name="Soldier TF2" parent="units/playerUnits" unique_id=2028242640 instance=ExtResource("2_lnu2h")]
+position = Vector2(1000, 1700)
+script = ExtResource("4_iywne")
+
+[node name="enemyUnits" type="Node" parent="units" unique_id=1016071766]
+
+[node name="Testing Enemy" parent="units/enemyUnits" unique_id=926343270 instance=ExtResource("2_lnu2h")]
+position = Vector2(700, 1100)
+script = ExtResource("5_iywne")
+
+[node name="Testing Enemy2" parent="units/enemyUnits" unique_id=912801350 instance=ExtResource("2_lnu2h")]
+position = Vector2(1000, 600)
+script = ExtResource("5_iywne")
+
+[node name="Testing Enemy3" parent="units/enemyUnits" unique_id=1072490586 instance=ExtResource("2_lnu2h")]
+position = Vector2(1800, 1000)
+script = ExtResource("5_iywne")
+
+[node name="Testing Enemy4" parent="units/enemyUnits" unique_id=207390869 instance=ExtResource("2_lnu2h")]
+position = Vector2(2000, 800)
+script = ExtResource("5_iywne")
+
+[node name="alliedUnits" type="Node" parent="units" unique_id=2019537047]

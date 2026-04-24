@@ -1,0 +1,47 @@
+[gd_scene format=3 uid="uid://c4ars8mpm1ygt"]
+
+[ext_resource type="PackedScene" uid="uid://du0284x42gvcu" path="res://scenes/wall.tscn" id="1_rnjyy"]
+[ext_resource type="Script" uid="uid://dyipa5stlcqaj" path="res://scripts/player_mastermind.gd" id="2_4vge2"]
+[ext_resource type="PackedScene" uid="uid://bc7b1ntmt10uy" path="res://scenes/unit.tscn" id="3_04qyp"]
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_y32ns"]
+vertices = PackedVector2Array(555.15625, -300.78906, 524.8672, 379.89844, 203, -45.570313, 203, -283, 141.22656, 378.10156, 144.14844, 350.67188, 174.71094, 90.13281, 152.95313, -336.92188, 134.53125, -283, -176.10156, -309, -177.78125, 377.9922, -588.21094, 375.14063, -561.7578, -307.09375, -153.84375, -196, -156.15625, 87.859375, 136.53906, -196, 172.3125, 22, 134, -50.328125, -88.109375, 22, -88.890625, -126.21875, 134, -128.75781)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3), PackedInt32Array(2, 1, 4, 5, 6), PackedInt32Array(7, 0, 3, 8, 9), PackedInt32Array(10, 11, 12, 9, 13, 14), PackedInt32Array(8, 15, 13, 9), PackedInt32Array(5, 10, 14, 6), PackedInt32Array(2, 6, 16), PackedInt32Array(17, 2, 16, 18), PackedInt32Array(17, 18, 19, 20)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(-109, -146, -108, 42, 153, 42, 154, 70, 119, 398, 544, 400, 576, -319, 153, -357, -177, -329, -581, -327, -609, 395, -177, 398, 153, 370, 155, 70, -136, 68, -134, -176, 157, -176, 155, -263, 183, -263, 183, -67, 154, -69, 154, -149)])
+agent_radius = 20.0
+
+[node name="game" type="Node2D" unique_id=1366043411]
+
+[node name="Building1" type="StaticBody2D" parent="." unique_id=1874713369]
+
+[node name="CollisionShape2D" parent="Building1" unique_id=1306071120 instance=ExtResource("1_rnjyy")]
+position = Vector2(17.399952, 92.181244)
+scale = Vector2(16.485714, -2)
+
+[node name="CollisionShape2D2" parent="Building1" unique_id=744097132 instance=ExtResource("1_rnjyy")]
+position = Vector2(-114.826256, -8.727341)
+
+[node name="navMesh" type="NavigationRegion2D" parent="." unique_id=4192704]
+visible = false
+navigation_polygon = SubResource("NavigationPolygon_y32ns")
+
+[node name="playerMastermind" type="Node2D" parent="." unique_id=351449607]
+script = ExtResource("2_4vge2")
+
+[node name="Camera2D" type="Camera2D" parent="playerMastermind" unique_id=341709902]
+
+[node name="UI" type="CanvasLayer" parent="." unique_id=1753380571]
+
+[node name="units" type="Node" parent="." unique_id=438359313]
+
+[node name="playerUnits" type="Node" parent="units" unique_id=352092799]
+
+[node name="John Helldiver" parent="units/playerUnits" unique_id=1977838871 instance=ExtResource("3_04qyp")]
+position = Vector2(-211, 226)
+
+[node name="enemyUnits" type="Node" parent="units" unique_id=1016071766]
+
+[node name="Testing Enemy" parent="units/enemyUnits" unique_id=926343270 instance=ExtResource("3_04qyp")]
+position = Vector2(-407, -9)
+
+[node name="alliedUnits" type="Node" parent="units" unique_id=2019537047]

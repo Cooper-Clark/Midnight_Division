@@ -1,0 +1,342 @@
+[gd_scene format=3 uid="uid://cdderjiu5ingm"]
+
+[ext_resource type="Theme" uid="uid://bcew1d32xf0cs" path="res://assets/AgencyFBTheme.tres" id="1_kqc40"]
+[ext_resource type="Script" uid="uid://dyycchdlrc5pf" path="res://scripts/dossierScript.gd" id="1_ya1ac"]
+[ext_resource type="Texture2D" uid="uid://cde4x10ctpkfq" path="res://icon.svg" id="2_ya1ac"]
+[ext_resource type="Texture2D" uid="uid://2wjp6axlpo4v" path="res://assets/sprites/NellieCrunched.png" id="3_x1fjg"]
+[ext_resource type="Texture2D" uid="uid://dgrinebv8t7d4" path="res://assets/sprites/CM60-L Sprite.png" id="4_ya1ac"]
+
+[node name="dossier" type="CanvasLayer" unique_id=1452330192]
+script = ExtResource("1_ya1ac")
+
+[node name="panel" type="Panel" parent="." unique_id=7003915]
+offset_right = 640.0
+offset_bottom = 360.0
+theme = ExtResource("1_kqc40")
+
+[node name="margin" type="MarginContainer" parent="panel" unique_id=1572356295]
+layout_mode = 0
+offset_right = 640.0
+offset_bottom = 360.0
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 50
+theme_override_constants/margin_bottom = 20
+
+[node name="menu" type="HBoxContainer" parent="panel/margin" unique_id=758730002]
+layout_mode = 2
+alignment = 1
+
+[node name="stats" type="VBoxContainer" parent="panel/margin/menu" unique_id=2135979510]
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+
+[node name="characteristics" type="VBoxContainer" parent="panel/margin/menu/stats" unique_id=1779193240]
+layout_mode = 2
+
+[node name="label" type="Label" parent="panel/margin/menu/stats/characteristics" unique_id=742795827]
+modulate = Color(0.23921569, 0.56078434, 0.25490198, 1)
+layout_mode = 2
+theme = ExtResource("1_kqc40")
+text = "Statistics"
+horizontal_alignment = 1
+
+[node name="nerveBar" type="ProgressBar" parent="panel/margin/menu/stats/characteristics" unique_id=1363437605]
+custom_minimum_size = Vector2(0, 5)
+layout_mode = 2
+theme = ExtResource("1_kqc40")
+value = 1.0
+show_percentage = false
+
+[node name="marksmanshipBar" type="ProgressBar" parent="panel/margin/menu/stats/characteristics" unique_id=338041011]
+custom_minimum_size = Vector2(0, 5)
+layout_mode = 2
+theme = ExtResource("1_kqc40")
+value = 1.0
+show_percentage = false
+
+[node name="cqcBar" type="ProgressBar" parent="panel/margin/menu/stats/characteristics" unique_id=822915919]
+custom_minimum_size = Vector2(0, 5)
+layout_mode = 2
+size_flags_vertical = 1
+theme = ExtResource("1_kqc40")
+value = 1.0
+show_percentage = false
+
+[node name="strengthBar" type="ProgressBar" parent="panel/margin/menu/stats/characteristics" unique_id=1267364788]
+custom_minimum_size = Vector2(0, 5)
+layout_mode = 2
+theme = ExtResource("1_kqc40")
+value = 1.0
+show_percentage = false
+
+[node name="nerve" type="HBoxContainer" parent="panel/margin/menu/stats/characteristics" unique_id=217038277]
+layout_mode = 2
+
+[node name="label" type="Label" parent="panel/margin/menu/stats/characteristics/nerve" unique_id=269765959]
+modulate = Color(0.23921569, 0.56078434, 0.25490198, 1)
+layout_mode = 2
+theme = ExtResource("1_kqc40")
+theme_override_font_sizes/font_size = 12
+text = "Nerve:"
+horizontal_alignment = 1
+
+[node name="value" type="Label" parent="panel/margin/menu/stats/characteristics/nerve" unique_id=1041610884]
+modulate = Color(0.23921569, 0.56078434, 0.25490198, 1)
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("1_kqc40")
+theme_override_font_sizes/font_size = 12
+text = "0"
+horizontal_alignment = 2
+
+[node name="marksmanship" type="HBoxContainer" parent="panel/margin/menu/stats/characteristics" unique_id=382494715]
+layout_mode = 2
+
+[node name="label" type="Label" parent="panel/margin/menu/stats/characteristics/marksmanship" unique_id=1347523773]
+modulate = Color(0.23921569, 0.56078434, 0.25490198, 1)
+layout_mode = 2
+theme = ExtResource("1_kqc40")
+theme_override_font_sizes/font_size = 12
+text = "Marksmanship:"
+horizontal_alignment = 1
+
+[node name="value" type="Label" parent="panel/margin/menu/stats/characteristics/marksmanship" unique_id=109865489]
+modulate = Color(0.23921569, 0.56078434, 0.25490198, 1)
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("1_kqc40")
+theme_override_font_sizes/font_size = 12
+text = "0"
+horizontal_alignment = 2
+
+[node name="cqc" type="HBoxContainer" parent="panel/margin/menu/stats/characteristics" unique_id=1464969226]
+layout_mode = 2
+
+[node name="label" type="Label" parent="panel/margin/menu/stats/characteristics/cqc" unique_id=780311628]
+modulate = Color(0.23921569, 0.56078434, 0.25490198, 1)
+layout_mode = 2
+theme = ExtResource("1_kqc40")
+theme_override_font_sizes/font_size = 12
+text = "CQC:"
+horizontal_alignment = 1
+
+[node name="value" type="Label" parent="panel/margin/menu/stats/characteristics/cqc" unique_id=1444862730]
+modulate = Color(0.23921569, 0.56078434, 0.25490198, 1)
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("1_kqc40")
+theme_override_font_sizes/font_size = 12
+text = "0"
+horizontal_alignment = 2
+
+[node name="strength" type="HBoxContainer" parent="panel/margin/menu/stats/characteristics" unique_id=888922562]
+layout_mode = 2
+
+[node name="label" type="Label" parent="panel/margin/menu/stats/characteristics/strength" unique_id=111247206]
+modulate = Color(0.23921569, 0.56078434, 0.25490198, 1)
+layout_mode = 2
+theme = ExtResource("1_kqc40")
+theme_override_font_sizes/font_size = 12
+text = "Strength:"
+horizontal_alignment = 1
+
+[node name="value" type="Label" parent="panel/margin/menu/stats/characteristics/strength" unique_id=1514803583]
+modulate = Color(0.23921569, 0.56078434, 0.25490198, 1)
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("1_kqc40")
+theme_override_font_sizes/font_size = 12
+text = "0"
+horizontal_alignment = 2
+
+[node name="HSeparator" type="HSeparator" parent="panel/margin/menu/stats" unique_id=698082518]
+layout_mode = 2
+theme = ExtResource("1_kqc40")
+
+[node name="label" type="Label" parent="panel/margin/menu/stats" unique_id=701668337]
+modulate = Color(0.23921569, 0.56078434, 0.25490198, 1)
+layout_mode = 2
+theme = ExtResource("1_kqc40")
+text = "Known Spells"
+horizontal_alignment = 1
+
+[node name="spells" type="VBoxContainer" parent="panel/margin/menu/stats" unique_id=356532624]
+layout_mode = 2
+
+[node name="middleCont" type="VBoxContainer" parent="panel/margin/menu" unique_id=1322428456]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="unitName" type="Label" parent="panel/margin/menu/middleCont" unique_id=1164110672]
+modulate = Color(0.23921569, 0.56078434, 0.25490198, 1)
+layout_mode = 2
+theme = ExtResource("1_kqc40")
+text = "Name"
+horizontal_alignment = 1
+
+[node name="unitSprite" type="TextureRect" parent="panel/margin/menu/middleCont" unique_id=788646930]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 6
+texture = ExtResource("3_x1fjg")
+stretch_mode = 2
+
+[node name="rightBar" type="TabContainer" parent="panel/margin/menu" unique_id=1081119946]
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+theme = ExtResource("1_kqc40")
+tab_alignment = 1
+current_tab = 0
+tab_0/title = "info"
+tab_1/title = "abilities"
+tab_2/title = "gear"
+
+[node name="infoScroll" type="ScrollContainer" parent="panel/margin/menu/rightBar" unique_id=628494676]
+layout_mode = 2
+metadata/_tab_index = 0
+metadata/_tab_name = "info"
+
+[node name="info" type="VBoxContainer" parent="panel/margin/menu/rightBar/infoScroll" unique_id=27099923]
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+
+[node name="signetWeaponInfo" type="VBoxContainer" parent="panel/margin/menu/rightBar/infoScroll/info" unique_id=1905982552]
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+
+[node name="label" type="Label" parent="panel/margin/menu/rightBar/infoScroll/info/signetWeaponInfo" unique_id=17785407]
+modulate = Color(0.23921569, 0.56078434, 0.25490198, 1)
+layout_mode = 2
+theme = ExtResource("1_kqc40")
+theme_override_font_sizes/font_size = 12
+text = "Signet Weapon:"
+horizontal_alignment = 1
+
+[node name="value" type="Label" parent="panel/margin/menu/rightBar/infoScroll/info/signetWeaponInfo" unique_id=1679998519]
+modulate = Color(0.23921569, 0.56078434, 0.25490198, 1)
+layout_mode = 2
+theme = ExtResource("1_kqc40")
+text = "name"
+horizontal_alignment = 1
+
+[node name="sprite" type="TextureRect" parent="panel/margin/menu/rightBar/infoScroll/info/signetWeaponInfo" unique_id=665070424]
+custom_minimum_size = Vector2(0, 60)
+layout_mode = 2
+texture = ExtResource("4_ya1ac")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="HSeparator" type="HSeparator" parent="panel/margin/menu/rightBar/infoScroll/info" unique_id=271174733]
+layout_mode = 2
+theme = ExtResource("1_kqc40")
+
+[node name="signetRuneInfo" type="VBoxContainer" parent="panel/margin/menu/rightBar/infoScroll/info" unique_id=1271147871]
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+
+[node name="label" type="Label" parent="panel/margin/menu/rightBar/infoScroll/info/signetRuneInfo" unique_id=789659603]
+modulate = Color(0.23921569, 0.56078434, 0.25490198, 1)
+layout_mode = 2
+theme = ExtResource("1_kqc40")
+theme_override_font_sizes/font_size = 12
+text = "label"
+horizontal_alignment = 1
+
+[node name="value" type="Label" parent="panel/margin/menu/rightBar/infoScroll/info/signetRuneInfo" unique_id=1101365989]
+modulate = Color(0.23921569, 0.56078434, 0.25490198, 1)
+layout_mode = 2
+theme = ExtResource("1_kqc40")
+theme_override_font_sizes/font_size = 12
+text = "words"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="HSeparator2" type="HSeparator" parent="panel/margin/menu/rightBar/infoScroll/info" unique_id=2000542313]
+layout_mode = 2
+theme = ExtResource("1_kqc40")
+
+[node name="bio" type="VBoxContainer" parent="panel/margin/menu/rightBar/infoScroll/info" unique_id=129647431]
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+theme = ExtResource("1_kqc40")
+
+[node name="label" type="Label" parent="panel/margin/menu/rightBar/infoScroll/info/bio" unique_id=1478820259]
+modulate = Color(0.23921569, 0.56078434, 0.25490198, 1)
+layout_mode = 2
+theme = ExtResource("1_kqc40")
+text = "Bio:"
+horizontal_alignment = 1
+
+[node name="value" type="Label" parent="panel/margin/menu/rightBar/infoScroll/info/bio" unique_id=2132238421]
+modulate = Color(0.23921569, 0.56078434, 0.25490198, 1)
+layout_mode = 2
+theme = ExtResource("1_kqc40")
+theme_override_font_sizes/font_size = 12
+text = "words"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="abilitiesScroll" type="ScrollContainer" parent="panel/margin/menu/rightBar" unique_id=193554863]
+visible = false
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+metadata/_tab_index = 1
+metadata/_tab_name = "abilities"
+
+[node name="abilities" type="VBoxContainer" parent="panel/margin/menu/rightBar/abilitiesScroll" unique_id=2034991031]
+layout_mode = 2
+
+[node name="abilitiesList" type="VBoxContainer" parent="panel/margin/menu/rightBar/abilitiesScroll/abilities" unique_id=1997015429]
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+
+[node name="HSeparator2" type="HSeparator" parent="panel/margin/menu/rightBar/abilitiesScroll/abilities" unique_id=1745741268]
+layout_mode = 2
+theme = ExtResource("1_kqc40")
+
+[node name="gearScroll" type="ScrollContainer" parent="panel/margin/menu/rightBar" unique_id=729447030]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 2
+metadata/_tab_name = "gear"
+
+[node name="gear" type="VBoxContainer" parent="panel/margin/menu/rightBar/gearScroll" unique_id=1734849654]
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+
+[node name="gearList" type="VBoxContainer" parent="panel/margin/menu/rightBar/gearScroll/gear" unique_id=490956274]
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+
+[node name="HSeparator2" type="HSeparator" parent="panel/margin/menu/rightBar/gearScroll/gear" unique_id=409795624]
+layout_mode = 2
+theme = ExtResource("1_kqc40")
+
+[node name="Button" type="Button" parent="panel/margin/menu/rightBar/gearScroll/gear" unique_id=1434146177]
+custom_minimum_size = Vector2(70, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+text = "+ Add Gear"
+
+[node name="keeper" type="Node" parent="." unique_id=898285561]
+
+[node name="listItem" type="HBoxContainer" parent="keeper" unique_id=611933903]
+
+[node name="sprite" type="TextureRect" parent="keeper/listItem" unique_id=487855199]
+custom_minimum_size = Vector2(5, 5)
+layout_mode = 2
+size_flags_horizontal = 4
+theme = ExtResource("1_kqc40")
+texture = ExtResource("2_ya1ac")
+expand_mode = 2
+
+[node name="value" type="Label" parent="keeper/listItem" unique_id=1406326661]
+modulate = Color(0.23921569, 0.56078434, 0.25490198, 1)
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("1_kqc40")
+theme_override_font_sizes/font_size = 12
+text = "text"
+horizontal_alignment = 2

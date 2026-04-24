@@ -1,0 +1,337 @@
+[gd_scene format=3 uid="uid://c4ars8mpm1ygt"]
+
+[ext_resource type="PackedScene" uid="uid://bygkt1t6vtah3" path="res://scenes/inGameUI.tscn" id="1_p57ef"]
+[ext_resource type="PackedScene" uid="uid://b8y1vaa3vyj0u" path="res://scenes/spawningPool.tscn" id="1_u5sy4"]
+[ext_resource type="Script" uid="uid://dyipa5stlcqaj" path="res://scripts/player_mastermind.gd" id="1_yqjtg"]
+[ext_resource type="PackedScene" uid="uid://bc7b1ntmt10uy" path="res://scenes/unit.tscn" id="2_lnu2h"]
+[ext_resource type="PackedScene" uid="uid://du0284x42gvcu" path="res://scenes/wall.tscn" id="3_lnu2h"]
+[ext_resource type="Script" uid="uid://dsi8c6wfd1u8s" path="res://scripts/playerUnitScript.gd" id="4_iywne"]
+[ext_resource type="Script" uid="uid://bw2yq3hxl5jtl" path="res://scripts/enemyUnitScript.gd" id="5_iywne"]
+[ext_resource type="Script" uid="uid://c0cfocgudf5lb" path="res://scripts/losScript.gd" id="7_vtaks"]
+[ext_resource type="Texture2D" uid="uid://b7j2lab57kmpy" path="res://assets/sprites/simpleLightTexture1080.tres" id="10_vtaks"]
+
+[sub_resource type="Gradient" id="Gradient_p57ef"]
+colors = PackedColorArray(0.01999998, 0.24, 0, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_u5sy4"]
+gradient = SubResource("Gradient_p57ef")
+fill_from = Vector2(0, 1)
+fill_to = Vector2(0, 1)
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_y32ns"]
+vertices = PackedVector2Array(812.27344, 321.20313, 1500, 1700, 1100, 1700, 350, 1330, 350, 690, 527.72656, 321.20313, 812.27344, 178.79688, 1500, -260, 420, 30, 420, -30, 527.72656, 178.79688, 1100, 3700, -561.0078, 3425.6016, -524.15625, 3288.0469, -90, 1330, -798.9922, 3214.3984, 210, 750, 290, 750, 290, 1270, 150, 1270, 150, 1090, 90, 1270, -30, 1270, -30, 1150, 50, 1150, 90, 1090, 50, 1090, -30, 1090, -30, 1030, 50, 1030, 90, 1030, 50, 970, -30, 970, -30, 750, 90, 750, 150, 1030, 150, 690, 210, 690, -835.84375, 3351.9531, -1260, 3700, -1260, 1050, -650, 1050, -710, 910, -710, 990, -1230, 990, -1230, 850, -1050, 850, -1230, 790, -1230, 670, -1110, 670, -1110, 750, -1050, 790, -1050, 750, -1050, 670, -990, 670, -990, 750, -990, 790, -930, 750, -930, 670, -710, 670, -710, 790, -990, 850, -650, 850, -650, 910, -650, 610, -1260, 610, -1260, 420, -660, 420, -720, 280, -720, 360, -1240, 360, -1240, 220, -1060, 220, -1240, 160, -1240, 40, -1120, 40, -1120, 120, -1060, 160, -1060, 120, -1060, 40, -1000, 40, -1000, 120, -1000, 160, -940, 120, -940, 40, -720, 40, -720, 160, -1000, 220, -660, 220, -660, 280, -660, -20, -1260, -20, -1260, -260, -220, -220, -20, 30, 160, 30, 160, 160, -160, 160, -160, -160, -20, -30, 420, -160, 420, -220, -220, 220, -90, 690, 220, 220, 220, 30)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3, 4, 5), PackedInt32Array(0, 6, 7, 1), PackedInt32Array(8, 9, 7, 6, 10), PackedInt32Array(2, 11, 12, 13, 3), PackedInt32Array(14, 3, 13, 15), PackedInt32Array(16, 17, 18, 19, 20), PackedInt32Array(21, 22, 23, 24), PackedInt32Array(25, 21, 24, 26), PackedInt32Array(26, 27, 28, 29), PackedInt32Array(25, 26, 29, 30), PackedInt32Array(31, 32, 33, 34), PackedInt32Array(31, 34, 30, 29), PackedInt32Array(20, 25, 30, 35), PackedInt32Array(16, 20, 35), PackedInt32Array(16, 35, 36, 37), PackedInt32Array(38, 39, 40, 41, 15), PackedInt32Array(42, 43, 44, 45, 46), PackedInt32Array(47, 48, 49, 50), PackedInt32Array(51, 47, 50, 52), PackedInt32Array(52, 53, 54, 55), PackedInt32Array(51, 52, 55, 56), PackedInt32Array(57, 58, 59, 60), PackedInt32Array(57, 60, 56, 55), PackedInt32Array(46, 51, 56, 61), PackedInt32Array(42, 46, 61), PackedInt32Array(42, 61, 62, 63), PackedInt32Array(64, 65, 66, 67), PackedInt32Array(68, 69, 70, 71, 72), PackedInt32Array(73, 74, 75, 76), PackedInt32Array(77, 73, 76, 78), PackedInt32Array(78, 79, 80, 81), PackedInt32Array(77, 78, 81, 82), PackedInt32Array(83, 84, 85, 86), PackedInt32Array(83, 86, 82, 81), PackedInt32Array(72, 77, 82, 87), PackedInt32Array(68, 72, 87), PackedInt32Array(68, 87, 88, 89), PackedInt32Array(90, 91, 92, 93), PackedInt32Array(94, 95, 96, 97), PackedInt32Array(94, 97, 98, 99), PackedInt32Array(99, 98, 100, 9), PackedInt32Array(7, 9, 100), PackedInt32Array(7, 100, 101), PackedInt32Array(92, 7, 101, 93), PackedInt32Array(90, 93, 102, 88), PackedInt32Array(103, 64, 89, 88, 102, 36), PackedInt32Array(104, 105, 8, 10, 5, 4), PackedInt32Array(104, 4, 37, 102), PackedInt32Array(102, 37, 36), PackedInt32Array(12, 11, 39), PackedInt32Array(38, 12, 39), PackedInt32Array(14, 15, 41, 103), PackedInt32Array(103, 41, 63), PackedInt32Array(103, 63, 62), PackedInt32Array(103, 62, 64), PackedInt32Array(89, 64, 67)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(2720, 3720, 2720, -280, -1280, -280, -1280, 3720)])
+agent_radius = 20.0
+
+[sub_resource type="Gradient" id="Gradient_0tnpc"]
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_vtaks"]
+gradient = SubResource("Gradient_0tnpc")
+
+[node name="game" type="Node2D" unique_id=1366043411]
+
+[node name="tempParticles" type="Node" parent="." unique_id=2068137391]
+
+[node name="SpawningPool" parent="." unique_id=1825618665 instance=ExtResource("1_u5sy4")]
+position = Vector2(2400, 200)
+waitRange = Array[int]([2, 4])
+burstRange = Array[int]([1, 3])
+
+[node name="SpawningPool2" parent="." unique_id=1426838408 instance=ExtResource("1_u5sy4")]
+position = Vector2(200, 200)
+waitRange = Array[int]([5, 10])
+burstRange = Array[int]([1, 3])
+
+[node name="testBackground" type="Sprite2D" parent="." unique_id=1839149490]
+position = Vector2(2000, 2000)
+scale = Vector2(62.5, 62.5)
+texture = SubResource("GradientTexture2D_u5sy4")
+
+[node name="navMesh" type="NavigationRegion2D" parent="." unique_id=4192704]
+position = Vector2(1280, 280)
+navigation_polygon = SubResource("NavigationPolygon_y32ns")
+
+[node name="Walls" type="Node" parent="navMesh" unique_id=66859610]
+
+[node name="StaticBody2D" parent="navMesh/Walls" unique_id=1456080839 instance=ExtResource("3_lnu2h")]
+position = Vector2(1280, 470)
+scale = Vector2(20, 1)
+
+[node name="StaticBody2D3" parent="navMesh/Walls" unique_id=451749847 instance=ExtResource("3_lnu2h")]
+position = Vector2(1280, 90)
+scale = Vector2(20, 1)
+
+[node name="StaticBody2D5" parent="navMesh/Walls" unique_id=1400359719 instance=ExtResource("3_lnu2h")]
+position = Vector2(1480, 280)
+scale = Vector2(20, 1)
+
+[node name="StaticBody2D7" parent="navMesh/Walls" unique_id=1397588886 instance=ExtResource("3_lnu2h")]
+position = Vector2(1950, 530)
+scale = Vector2(12.226666, 5.1200004)
+
+[node name="StaticBody2D10" parent="navMesh/Walls" unique_id=1493534993 instance=ExtResource("3_lnu2h")]
+position = Vector2(600, 3600)
+rotation = 0.2617994
+scale = Vector2(12.226666, 5.1200004)
+
+[node name="StaticBody2D8" parent="navMesh/Walls" unique_id=1744809037 instance=ExtResource("3_lnu2h")]
+position = Vector2(3199.9998, 3000)
+scale = Vector2(80, 100)
+
+[node name="StaticBody2D9" parent="navMesh/Walls" unique_id=787786561 instance=ExtResource("3_lnu2h")]
+position = Vector2(3400, 999.99994)
+scale = Vector2(60, 100)
+
+[node name="StaticBody2D2" parent="navMesh/Walls" unique_id=1622691491 instance=ExtResource("3_lnu2h")]
+position = Vector2(1090, 280)
+rotation = 1.5707964
+scale = Vector2(20, 1)
+
+[node name="StaticBody2D4" parent="navMesh/Walls" unique_id=808151265 instance=ExtResource("3_lnu2h")]
+position = Vector2(1470, 380)
+rotation = 1.5707964
+scale = Vector2(10, 1)
+
+[node name="StaticBody2D6" parent="navMesh/Walls" unique_id=341305179 instance=ExtResource("3_lnu2h")]
+position = Vector2(1580, 90)
+rotation = 3.1415927
+scale = Vector2(10, 1)
+
+[node name="House1" type="Node2D" parent="navMesh/Walls" unique_id=1574527591]
+position = Vector2(290, 470)
+rotation = -4.712389
+scale = Vector2(10, 1)
+
+[node name="StaticBody2D8" parent="navMesh/Walls/House1" unique_id=577115617 instance=ExtResource("3_lnu2h")]
+position = Vector2(20, -9.999998)
+rotation = -1.5707964
+scale = Vector2(30, 0.1)
+
+[node name="StaticBody2D15" parent="navMesh/Walls/House1" unique_id=194934607 instance=ExtResource("3_lnu2h")]
+position = Vector2(-7.748604e-07, -160.00006)
+rotation = -1.5707964
+scale = Vector2(15, 0.1)
+
+[node name="StaticBody2D16" parent="navMesh/Walls/House1" unique_id=562983391 instance=ExtResource("3_lnu2h")]
+position = Vector2(3.0398369e-06, 189.99994)
+rotation = -1.5707964
+scale = Vector2(10, 0.1)
+
+[node name="StaticBody2D9" parent="navMesh/Walls/House1" unique_id=1303763739 instance=ExtResource("3_lnu2h")]
+position = Vector2(-18, -9.999998)
+rotation = -1.5707964
+scale = Vector2(30, 0.1)
+
+[node name="StaticBody2D10" parent="navMesh/Walls/House1" unique_id=1790557229 instance=ExtResource("3_lnu2h")]
+position = Vector2(0.9999992, 280)
+rotation = 3.1415918
+scale = Vector2(2, 1)
+
+[node name="StaticBody2D11" parent="navMesh/Walls/House1" unique_id=261744227 instance=ExtResource("3_lnu2h")]
+position = Vector2(-9.000005, -299.99994)
+rotation = 3.1415918
+
+[node name="StaticBody2D12" parent="navMesh/Walls/House1" unique_id=2023070240 instance=ExtResource("3_lnu2h")]
+position = Vector2(15.999976, -300.00018)
+rotation = 3.1415918
+scale = Vector2(0.5, 1)
+
+[node name="StaticBody2D13" parent="navMesh/Walls/House1" unique_id=427898132 instance=ExtResource("3_lnu2h")]
+position = Vector2(-14.000009, 99.99994)
+rotation = 3.1415918
+scale = Vector2(0.5, 1)
+
+[node name="StaticBody2D14" parent="navMesh/Walls/House1" unique_id=823572429 instance=ExtResource("3_lnu2h")]
+position = Vector2(-13.999997, -19.999998)
+rotation = 3.1415918
+scale = Vector2(0.5, 1)
+
+[node name="House3" type="Node2D" parent="navMesh/Walls" unique_id=1449067379]
+position = Vector2(300, 1100)
+rotation = -4.712389
+scale = Vector2(10, 1)
+
+[node name="StaticBody2D8" parent="navMesh/Walls/House3" unique_id=1184207877 instance=ExtResource("3_lnu2h")]
+position = Vector2(20, -9.999998)
+rotation = -1.5707964
+scale = Vector2(30, 0.1)
+
+[node name="StaticBody2D15" parent="navMesh/Walls/House3" unique_id=1275902719 instance=ExtResource("3_lnu2h")]
+position = Vector2(-7.748604e-07, -160.00006)
+rotation = -1.5707964
+scale = Vector2(15, 0.1)
+
+[node name="StaticBody2D16" parent="navMesh/Walls/House3" unique_id=896803559 instance=ExtResource("3_lnu2h")]
+position = Vector2(3.0398369e-06, 189.99994)
+rotation = -1.5707964
+scale = Vector2(10, 0.1)
+
+[node name="StaticBody2D9" parent="navMesh/Walls/House3" unique_id=386287858 instance=ExtResource("3_lnu2h")]
+position = Vector2(-18, -9.999998)
+rotation = -1.5707964
+scale = Vector2(30, 0.1)
+
+[node name="StaticBody2D10" parent="navMesh/Walls/House3" unique_id=580110775 instance=ExtResource("3_lnu2h")]
+position = Vector2(0.9999992, 280)
+rotation = 3.1415918
+scale = Vector2(2, 1)
+
+[node name="StaticBody2D11" parent="navMesh/Walls/House3" unique_id=2102992720 instance=ExtResource("3_lnu2h")]
+position = Vector2(-9.000005, -299.99994)
+rotation = 3.1415918
+
+[node name="StaticBody2D12" parent="navMesh/Walls/House3" unique_id=964373694 instance=ExtResource("3_lnu2h")]
+position = Vector2(15.999976, -300.00018)
+rotation = 3.1415918
+scale = Vector2(0.5, 1)
+
+[node name="StaticBody2D13" parent="navMesh/Walls/House3" unique_id=615995685 instance=ExtResource("3_lnu2h")]
+position = Vector2(-14.000009, 99.99994)
+rotation = 3.1415918
+scale = Vector2(0.5, 1)
+
+[node name="StaticBody2D14" parent="navMesh/Walls/House3" unique_id=1489302016 instance=ExtResource("3_lnu2h")]
+position = Vector2(-13.999997, -19.999998)
+rotation = 3.1415918
+scale = Vector2(0.5, 1)
+
+[node name="House2" type="Node2D" parent="navMesh/Walls" unique_id=1068209877]
+position = Vector2(1400.0001, 1300)
+rotation = -6.2831855
+scale = Vector2(10, 1)
+
+[node name="StaticBody2D8" parent="navMesh/Walls/House2" unique_id=1084526276 instance=ExtResource("3_lnu2h")]
+position = Vector2(20, -9.999998)
+rotation = -1.5707964
+scale = Vector2(30, 0.1)
+
+[node name="StaticBody2D15" parent="navMesh/Walls/House2" unique_id=342962005 instance=ExtResource("3_lnu2h")]
+position = Vector2(-7.748604e-07, -160.00006)
+rotation = -1.5707964
+scale = Vector2(15, 0.1)
+
+[node name="StaticBody2D16" parent="navMesh/Walls/House2" unique_id=1446114037 instance=ExtResource("3_lnu2h")]
+position = Vector2(3.0398369e-06, 189.99994)
+rotation = -1.5707964
+scale = Vector2(10, 0.1)
+
+[node name="StaticBody2D9" parent="navMesh/Walls/House2" unique_id=1784892295 instance=ExtResource("3_lnu2h")]
+position = Vector2(-18, -9.999998)
+rotation = -1.5707964
+scale = Vector2(30, 0.1)
+
+[node name="StaticBody2D10" parent="navMesh/Walls/House2" unique_id=1197268791 instance=ExtResource("3_lnu2h")]
+position = Vector2(0.9999992, 280)
+rotation = 3.1415918
+scale = Vector2(2, 1)
+
+[node name="StaticBody2D11" parent="navMesh/Walls/House2" unique_id=1130533610 instance=ExtResource("3_lnu2h")]
+position = Vector2(-9.000005, -299.99994)
+rotation = 3.1415918
+
+[node name="StaticBody2D12" parent="navMesh/Walls/House2" unique_id=1107803861 instance=ExtResource("3_lnu2h")]
+position = Vector2(15.999976, -300.00018)
+rotation = 3.1415918
+scale = Vector2(0.5, 1)
+
+[node name="StaticBody2D13" parent="navMesh/Walls/House2" unique_id=1060250068 instance=ExtResource("3_lnu2h")]
+position = Vector2(-14.000009, 99.99994)
+rotation = 3.1415918
+scale = Vector2(0.5, 1)
+
+[node name="StaticBody2D14" parent="navMesh/Walls/House2" unique_id=448204944 instance=ExtResource("3_lnu2h")]
+position = Vector2(-13.999997, -19.999998)
+rotation = 3.1415918
+scale = Vector2(0.5, 1)
+
+[node name="bloodEffects" type="CanvasLayer" parent="." unique_id=1753380571]
+
+[node name="units" type="Node" parent="." unique_id=438359313]
+
+[node name="playerUnits" type="Node" parent="units" unique_id=352092799]
+
+[node name="John Helldiver" parent="units/playerUnits" unique_id=1977838871 instance=ExtResource("2_lnu2h")]
+position = Vector2(400, 1200)
+script = ExtResource("4_iywne")
+operatorClass = 0
+operatorName = "Mordekaiser"
+
+[node name="Medic TF2" parent="units/playerUnits" unique_id=2028242640 instance=ExtResource("2_lnu2h")]
+position = Vector2(600, 3700)
+script = ExtResource("4_iywne")
+operatorClass = 1
+operatorName = "Medic TF2"
+
+[node name="Abrams Deadlock" parent="units/playerUnits" unique_id=411601843 instance=ExtResource("2_lnu2h")]
+position = Vector2(600, 3800)
+script = ExtResource("4_iywne")
+operatorClass = 2
+operatorName = "Abrams Deadlock"
+
+[node name="enemyUnits" type="Node" parent="units" unique_id=1016071766]
+
+[node name="fatass" parent="units/enemyUnits" unique_id=926343270 instance=ExtResource("2_lnu2h")]
+position = Vector2(500, 1000)
+script = ExtResource("5_iywne")
+movement_speed = 0.0
+walkSpeed = 0.0
+sprintSpeed = 0.0
+blood = 10000000000
+
+[node name="Testing Enemy2" parent="units/enemyUnits" unique_id=912801350 instance=ExtResource("2_lnu2h")]
+position = Vector2(1200, 300)
+script = ExtResource("5_iywne")
+
+[node name="Testing Enemy3" parent="units/enemyUnits" unique_id=1072490586 instance=ExtResource("2_lnu2h")]
+position = Vector2(1800, 1000)
+script = ExtResource("5_iywne")
+
+[node name="Testing Enemy4" parent="units/enemyUnits" unique_id=207390869 instance=ExtResource("2_lnu2h")]
+position = Vector2(1700, 1300)
+script = ExtResource("5_iywne")
+
+[node name="alliedUnits" type="Node" parent="units" unique_id=2019537047]
+
+[node name="PointLight2D" type="PointLight2D" parent="." unique_id=121924764]
+position = Vector2(263, 1150)
+shadow_enabled = true
+texture = ExtResource("10_vtaks")
+
+[node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=803561646]
+visible = false
+color = Color(0, 0, 0, 1)
+
+[node name="playerMastermind" type="Node2D" parent="." unique_id=351449607]
+script = ExtResource("1_yqjtg")
+
+[node name="Camera2D" type="Camera2D" parent="playerMastermind" unique_id=341709902]
+
+[node name="hud" parent="playerMastermind" unique_id=1009978227 instance=ExtResource("1_p57ef")]
+uiColour = null
+uiColourWarning = null
+uiColourDanger = null
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=250779955]
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="CanvasLayer" unique_id=1963460913]
+offset_right = 640.0
+offset_bottom = 360.0
+
+[node name="SubViewport" type="SubViewport" parent="CanvasLayer/SubViewportContainer" unique_id=1225672292]
+transparent_bg = true
+handle_input_locally = false
+size = Vector2i(640, 360)
+render_target_update_mode = 4
+
+[node name="LoSCanvasLayer" type="CanvasLayer" parent="CanvasLayer/SubViewportContainer/SubViewport" unique_id=179416695]
+
+[node name="LoS" type="Sprite2D" parent="CanvasLayer/SubViewportContainer/SubViewport/LoSCanvasLayer" unique_id=875338504]
+texture = SubResource("GradientTexture2D_vtaks")
+script = ExtResource("7_vtaks")
+
+[node name="loSes" type="Node" parent="CanvasLayer/SubViewportContainer/SubViewport/LoSCanvasLayer/LoS" unique_id=1697687049]
+
+[node name="CanvasModulate" type="CanvasModulate" parent="CanvasLayer/SubViewportContainer/SubViewport/LoSCanvasLayer" unique_id=1972752197]
+color = Color(0, 0, 0, 1)

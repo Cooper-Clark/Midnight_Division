@@ -1,0 +1,57 @@
+[gd_scene format=3 uid="uid://bc7b1ntmt10uy"]
+
+[ext_resource type="Script" uid="uid://chrru72sfjjkx" path="res://scripts/units/unitScript.gd" id="1_ctwoc"]
+[ext_resource type="Texture2D" uid="uid://cde4x10ctpkfq" path="res://icon.svg" id="2_davkp"]
+[ext_resource type="Script" uid="uid://c4wjqhja0p8b" path="res://scenes/hudDrawerScript.gd" id="3_e8hdl"]
+[ext_resource type="AudioStream" uid="uid://bjtsceafbylmg" path="res://sounds/heavyrifleshot.wav" id="5_tb304"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_5wnup"]
+
+[node name="unit" type="CharacterBody2D" unique_id=1977838871]
+collision_layer = 2
+collision_mask = 3
+motion_mode = 1
+script = ExtResource("1_ctwoc")
+
+[node name="unitNavAgent" type="NavigationAgent2D" parent="." unique_id=1879042906]
+path_desired_distance = 3.0
+target_desired_distance = 3.0
+
+[node name="canvasLayer" type="CanvasLayer" parent="." unique_id=2012109043]
+
+[node name="HUDDrawer" type="Node2D" parent="canvasLayer" unique_id=1993338330]
+visible = false
+script = ExtResource("3_e8hdl")
+
+[node name="icon" type="Sprite2D" parent="." unique_id=22237140]
+visible = false
+texture_filter = 1
+position = Vector2(2.0861626e-06, 0)
+scale = Vector2(0.234375, 0.23437501)
+texture = ExtResource("2_davkp")
+
+[node name="colShape" type="CollisionShape2D" parent="." unique_id=1288411354]
+shape = SubResource("CircleShape2D_5wnup")
+
+[node name="Timer" type="Timer" parent="." unique_id=2115306814]
+autostart = true
+
+[node name="unitAudio" type="AudioStreamPlayer2D" parent="." unique_id=1237414198]
+stream = ExtResource("5_tb304")
+volume_db = -15.0
+max_distance = 4000.0
+max_polyphony = 3
+
+[node name="lookTimer" type="Timer" parent="." unique_id=827252764]
+wait_time = 4.0
+one_shot = true
+
+[node name="taskTimer" type="Timer" parent="." unique_id=736918917]
+one_shot = true
+
+[node name="onScreen" type="VisibleOnScreenNotifier2D" parent="." unique_id=27829985]
+rect = Rect2(-15, -15, 30, 30)
+show_rect = false
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="taskTimer" to="." method="_on_task_timer_timeout"]

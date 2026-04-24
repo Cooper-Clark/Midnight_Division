@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://du0284x42gvcu"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uvhfp"]
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_uvhfp"]
+polygon = PackedVector2Array(-10, -10, 10, -10, 10, 10, -10, 10)
+
+[node name="wall" type="StaticBody2D" unique_id=1456080839]
+position = Vector2(10, 10)
+
+[node name="c" type="CollisionShape2D" parent="." unique_id=1306071120]
+shape = SubResource("RectangleShape2D_uvhfp")
+
+[node name="p" type="Polygon2D" parent="." unique_id=1591055309]
+color = Color(0, 0, 0, 1)
+polygon = PackedVector2Array(10, 10.000002, -10, 10.000002, -10, -10, 10, -10)
+
+[node name="o" type="LightOccluder2D" parent="." unique_id=1102798145]
+light_mask = 3
+visibility_layer = 3
+occluder = SubResource("OccluderPolygon2D_uvhfp")
+occluder_light_mask = 3

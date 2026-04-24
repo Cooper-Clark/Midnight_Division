@@ -1,0 +1,142 @@
+[gd_scene format=3 uid="uid://bygkt1t6vtah3"]
+
+[ext_resource type="Texture2D" uid="uid://c4sj85epm35oe" path="res://assets/sprites/CM85A1 Sprite.png" id="1_2lpnb"]
+[ext_resource type="Script" uid="uid://cg62xbf1hfa7v" path="res://scripts/uiScript.gd" id="1_fn3r6"]
+[ext_resource type="Texture2D" uid="uid://kjsabfs6mux3" path="res://assets/sprites/magIconHalf.png" id="3_fxico"]
+[ext_resource type="Texture2D" uid="uid://b8gqmryyo5vtj" path="res://assets/sprites/magIconEmpty.png" id="3_nidtt"]
+[ext_resource type="Texture2D" uid="uid://djgoehvraehau" path="res://assets/sprites/magIcon.png" id="4_jgapf"]
+[ext_resource type="Texture2D" uid="uid://bog6aoxqtcvp3" path="res://assets/sprites/pistolMagIconFull.png" id="5_e60bc"]
+[ext_resource type="Theme" uid="uid://bcew1d32xf0cs" path="res://assets/AgencyFBTheme.tres" id="5_fxico"]
+[ext_resource type="Texture2D" uid="uid://bfgea8ktb1th1" path="res://assets/sprites/pistolMagIconHalf.png" id="6_6xvw7"]
+[ext_resource type="Texture2D" uid="uid://dpgntqsc4y735" path="res://assets/sprites/pistolMagIconEmpty.png" id="7_fe1yp"]
+[ext_resource type="Texture2D" uid="uid://b12inkvu3inrf" path="res://assets/sprites/XCM19 Sprite.png" id="8_6xvw7"]
+[ext_resource type="Texture2D" uid="uid://s8pf8yt0ul47" path="res://assets/sprites/uiIcons/smallClockDots Sprite.png" id="11_pxh0i"]
+[ext_resource type="Texture2D" uid="uid://cbxwaxq0vxtdc" path="res://assets/sprites/uiIcons/minuteHand Sprite.png" id="12_pxh0i"]
+
+[node name="hud" type="CanvasLayer" unique_id=791108010]
+script = ExtResource("1_fn3r6")
+rifleFullMagIcon = ExtResource("4_jgapf")
+rifleHalfMagIcon = ExtResource("3_fxico")
+rifleEmptyMagIcon = ExtResource("3_nidtt")
+pistolFullMagIcon = ExtResource("5_e60bc")
+pistolHalfMagIcon = ExtResource("6_6xvw7")
+pistolEmptyMagIcon = ExtResource("7_fe1yp")
+
+[node name="unitElements" type="CanvasLayer" parent="." unique_id=1847393377]
+
+[node name="otherWeapons" type="FlowContainer" parent="unitElements" unique_id=1814192001]
+offset_left = 341.0
+offset_top = 315.0
+offset_right = 558.0
+offset_bottom = 389.0
+scale = Vector2(0.5, 0.5)
+alignment = 2
+
+[node name="magIcon" type="TextureRect" parent="unitElements/otherWeapons" unique_id=1588182335]
+layout_mode = 2
+texture = ExtResource("8_6xvw7")
+
+[node name="weaponName" type="Label" parent="unitElements" unique_id=1931196957]
+modulate = Color(0.23921569, 0.56078434, 0.25490198, 1)
+offset_left = 440.0
+offset_top = 263.0
+offset_right = 640.0
+offset_bottom = 286.0
+theme = ExtResource("5_fxico")
+text = "ArcTac CM85A1 IAR"
+horizontal_alignment = 1
+
+[node name="weaponIconContainer" type="FlowContainer" parent="unitElements" unique_id=120990963]
+offset_left = 440.0
+offset_top = 305.0
+offset_right = 640.0
+offset_bottom = 360.0
+alignment = 1
+
+[node name="weaponIcon" type="TextureRect" parent="unitElements/weaponIconContainer" unique_id=97396582]
+layout_mode = 2
+tooltip_text = "Tooltip"
+texture = ExtResource("1_2lpnb")
+
+[node name="weaponMagazine" type="Label" parent="unitElements" unique_id=1678415404]
+modulate = Color(0.23921569, 0.56078434, 0.25490198, 1)
+offset_left = 482.0
+offset_top = 283.0
+offset_right = 543.0
+offset_bottom = 303.0
+tooltip_text = "Tooltip"
+theme = ExtResource("5_fxico")
+text = "20/20"
+horizontal_alignment = 2
+
+[node name="mags" type="FlowContainer" parent="unitElements" unique_id=515144552]
+offset_left = 545.0
+offset_top = 285.0
+offset_right = 615.0
+offset_bottom = 301.0
+alignment = 1
+vertical = true
+
+[node name="magIcon" type="TextureRect" parent="unitElements/mags" unique_id=389528137]
+layout_mode = 2
+texture = ExtResource("4_jgapf")
+
+[node name="magIcon2" type="TextureRect" parent="unitElements/mags" unique_id=2072895289]
+layout_mode = 2
+texture = ExtResource("4_jgapf")
+
+[node name="magIcon3" type="TextureRect" parent="unitElements/mags" unique_id=480790603]
+layout_mode = 2
+texture = ExtResource("4_jgapf")
+
+[node name="alerts" type="VFlowContainer" parent="." unique_id=115779172]
+offset_left = 7.0
+offset_top = 251.0
+offset_right = 260.0
+offset_bottom = 352.0
+alignment = 2
+
+[node name="keeper" type="Node" parent="." unique_id=560018876]
+
+[node name="magIcon" type="TextureRect" parent="keeper" unique_id=432478996]
+visible = false
+offset_left = 516.0
+offset_top = 299.0
+offset_right = 521.0
+offset_bottom = 305.0
+texture = ExtResource("4_jgapf")
+
+[node name="alert" type="Label" parent="keeper" unique_id=1649664530]
+visible = false
+modulate = Color(0.23921569, 0.56078434, 0.25490198, 1)
+offset_left = 7.0
+offset_top = 284.0
+offset_right = 149.0
+offset_bottom = 304.0
+theme = ExtResource("5_fxico")
+text = "Echo Zulu sighted. Engaging."
+horizontal_alignment = 1
+
+[node name="lifeTimer" type="Timer" parent="keeper/alert" unique_id=1699912075]
+wait_time = 5.0
+one_shot = true
+autostart = true
+
+[node name="smallClock" type="Node" parent="keeper" unique_id=2527504]
+
+[node name="dots" type="TextureRect" parent="keeper/smallClock" unique_id=409777066]
+offset_left = 252.0
+offset_top = 209.0
+offset_right = 273.0
+offset_bottom = 230.0
+texture = ExtResource("11_pxh0i")
+
+[node name="lifeTimer" type="Timer" parent="keeper/smallClock" unique_id=1865020660]
+wait_time = 5.0
+one_shot = true
+autostart = true
+
+[node name="TextureRect" type="TextureRect" parent="keeper/smallClock" unique_id=839209068]
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("12_pxh0i")

@@ -1,0 +1,332 @@
+[gd_scene format=3 uid="uid://bygkt1t6vtah3"]
+
+[ext_resource type="Texture2D" uid="uid://c4sj85epm35oe" path="res://assets/sprites/CM85A1 Sprite.png" id="1_2lpnb"]
+[ext_resource type="Script" uid="uid://cg62xbf1hfa7v" path="res://scripts/uiScript.gd" id="1_fn3r6"]
+[ext_resource type="Texture2D" uid="uid://kjsabfs6mux3" path="res://assets/sprites/magIconHalf.png" id="3_fxico"]
+[ext_resource type="Texture2D" uid="uid://b8gqmryyo5vtj" path="res://assets/sprites/magIconEmpty.png" id="3_nidtt"]
+[ext_resource type="Texture2D" uid="uid://djgoehvraehau" path="res://assets/sprites/magIcon.png" id="4_jgapf"]
+[ext_resource type="Texture2D" uid="uid://bog6aoxqtcvp3" path="res://assets/sprites/pistolMagIconFull.png" id="5_e60bc"]
+[ext_resource type="Theme" uid="uid://bcew1d32xf0cs" path="res://assets/AgencyFBTheme.tres" id="5_fxico"]
+[ext_resource type="Texture2D" uid="uid://bfgea8ktb1th1" path="res://assets/sprites/pistolMagIconHalf.png" id="6_6xvw7"]
+[ext_resource type="Texture2D" uid="uid://dpgntqsc4y735" path="res://assets/sprites/pistolMagIconEmpty.png" id="7_fe1yp"]
+[ext_resource type="Texture2D" uid="uid://b12inkvu3inrf" path="res://assets/sprites/XCM19 Sprite.png" id="8_6xvw7"]
+[ext_resource type="Texture2D" uid="uid://dnm2ajctixp02" path="res://assets/sprites/unitIcons/breacherIcon.png" id="8_if1qh"]
+[ext_resource type="Texture2D" uid="uid://bsj0wsh6llda0" path="res://assets/sprites/unitIcons/technicianIcon.png" id="9_p0llv"]
+[ext_resource type="Texture2D" uid="uid://nexrks2fcp07" path="res://assets/sprites/unitIcons/supportIcon.png" id="10_trpoe"]
+[ext_resource type="Texture2D" uid="uid://duvp3y8i1cnx6" path="res://assets/sprites/unitIcons/reconIcon.png" id="11_pkb7t"]
+[ext_resource type="Texture2D" uid="uid://s8pf8yt0ul47" path="res://assets/sprites/uiIcons/smallClockDots Sprite.png" id="11_pxh0i"]
+[ext_resource type="Texture2D" uid="uid://bisuydo5lnc4c" path="res://assets/sprites/unitIcons/EZMauler.png" id="12_pkb7t"]
+[ext_resource type="Texture2D" uid="uid://cbxwaxq0vxtdc" path="res://assets/sprites/uiIcons/minuteHand Sprite.png" id="12_pxh0i"]
+[ext_resource type="Texture2D" uid="uid://lua76ke24ywc" path="res://assets/sprites/unitIcons/EZGunner.png" id="13_pxi0f"]
+[ext_resource type="Texture2D" uid="uid://ctfqqq5tykrb3" path="res://assets/sprites/unitIcons/bigClockDots.png" id="19_04rjj"]
+[ext_resource type="Texture2D" uid="uid://ddpo64ml8y5gy" path="res://assets/sprites/crosshairPart1.png" id="19_pxi0f"]
+[ext_resource type="Texture2D" uid="uid://d07g4gvoa223r" path="res://assets/sprites/10pxBarH.png" id="20_actyb"]
+[ext_resource type="Texture2D" uid="uid://5drpvd8uiqiy" path="res://assets/sprites/unitIcons/visionIcon.png" id="20_v18y7"]
+[ext_resource type="Texture2D" uid="uid://kxi6u8jhm3kq" path="res://assets/sprites/10pxBarV.png" id="21_b85we"]
+[ext_resource type="Texture2D" uid="uid://br53grtr5xh60" path="res://assets/sprites/unitIcons/walkIcon.png" id="24_3iasm"]
+[ext_resource type="Texture2D" uid="uid://vtgiy2yvpq1b" path="res://assets/sprites/uiIcons/unknownSoundIcon.png" id="25_bm7w0"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hloei"]
+atlas = ExtResource("25_bm7w0")
+region = Rect2(0, 0, 25, 19)
+
+[node name="hud" type="CanvasLayer" unique_id=791108010]
+script = ExtResource("1_fn3r6")
+rifleFullMagIcon = ExtResource("4_jgapf")
+rifleHalfMagIcon = ExtResource("3_fxico")
+rifleEmptyMagIcon = ExtResource("3_nidtt")
+pistolFullMagIcon = ExtResource("5_e60bc")
+pistolHalfMagIcon = ExtResource("6_6xvw7")
+pistolEmptyMagIcon = ExtResource("7_fe1yp")
+operatorClassIcons = Array[Texture]([ExtResource("8_if1qh"), ExtResource("9_p0llv"), ExtResource("10_trpoe"), ExtResource("11_pkb7t")])
+enemyClassIcons = Array[Texture]([ExtResource("12_pkb7t"), ExtResource("13_pxi0f")])
+
+[node name="randomShit" type="Label" parent="." unique_id=2074787024]
+modulate = Color(0.23921569, 0.56078434, 0.25490198, 0.078431375)
+offset_right = 640.0
+offset_bottom = 360.0
+theme = ExtResource("5_fxico")
+text = "Searchlight OS v1.902.2123
+Conversion of raw night-vision camera data into colour complete.
+Video feed stable, minimal packet loss."
+
+[node name="unitElements" type="Control" parent="." unique_id=1822323114]
+layout_mode = 3
+anchors_preset = 0
+
+[node name="otherWeapons" type="FlowContainer" parent="unitElements" unique_id=1814192001]
+layout_mode = 0
+offset_left = 341.0
+offset_top = 315.0
+offset_right = 558.0
+offset_bottom = 389.0
+scale = Vector2(0.5, 0.5)
+alignment = 2
+
+[node name="magIcon" type="TextureRect" parent="unitElements/otherWeapons" unique_id=1588182335]
+layout_mode = 2
+texture = ExtResource("8_6xvw7")
+
+[node name="weaponName" type="Label" parent="unitElements" unique_id=1931196957]
+modulate = Color(0.23921569, 0.56078434, 0.25490198, 1)
+layout_mode = 0
+offset_left = 440.0
+offset_top = 263.0
+offset_right = 640.0
+offset_bottom = 286.0
+theme = ExtResource("5_fxico")
+text = "ArcTac CM85A1 IAR"
+horizontal_alignment = 1
+
+[node name="weaponIconContainer" type="FlowContainer" parent="unitElements" unique_id=120990963]
+layout_mode = 0
+offset_left = 440.0
+offset_top = 305.0
+offset_right = 640.0
+offset_bottom = 360.0
+alignment = 1
+
+[node name="weaponIcon" type="TextureRect" parent="unitElements/weaponIconContainer" unique_id=97396582]
+layout_mode = 2
+tooltip_text = "Tooltip"
+mouse_default_cursor_shape = 2
+texture = ExtResource("1_2lpnb")
+
+[node name="weaponMagazine" type="Label" parent="unitElements" unique_id=1678415404]
+modulate = Color(0.23921569, 0.56078434, 0.25490198, 1)
+layout_mode = 0
+offset_left = 482.0
+offset_top = 283.0
+offset_right = 543.0
+offset_bottom = 303.0
+tooltip_text = "Tooltip"
+theme = ExtResource("5_fxico")
+text = "20/20"
+horizontal_alignment = 2
+
+[node name="mags" type="FlowContainer" parent="unitElements" unique_id=515144552]
+layout_mode = 0
+offset_left = 545.0
+offset_top = 285.0
+offset_right = 615.0
+offset_bottom = 301.0
+alignment = 1
+vertical = true
+
+[node name="magIcon" type="TextureRect" parent="unitElements/mags" unique_id=389528137]
+layout_mode = 2
+texture = ExtResource("4_jgapf")
+
+[node name="magIcon2" type="TextureRect" parent="unitElements/mags" unique_id=2072895289]
+layout_mode = 2
+texture = ExtResource("4_jgapf")
+
+[node name="magIcon3" type="TextureRect" parent="unitElements/mags" unique_id=480790603]
+layout_mode = 2
+texture = ExtResource("4_jgapf")
+
+[node name="alerts" type="VFlowContainer" parent="." unique_id=115779172]
+offset_left = 7.0
+offset_top = 251.0
+offset_right = 260.0
+offset_bottom = 352.0
+mouse_filter = 2
+alignment = 2
+
+[node name="keeper" type="Node" parent="." unique_id=560018876]
+
+[node name="magIcon" type="TextureRect" parent="keeper" unique_id=432478996]
+visible = false
+offset_left = 516.0
+offset_top = 299.0
+offset_right = 521.0
+offset_bottom = 305.0
+texture = ExtResource("4_jgapf")
+
+[node name="alert" type="Label" parent="keeper" unique_id=1649664530]
+visible = false
+modulate = Color(0.23921569, 0.56078434, 0.25490198, 1)
+offset_left = 7.0
+offset_top = 284.0
+offset_right = 149.0
+offset_bottom = 304.0
+theme = ExtResource("5_fxico")
+text = "Echo Zulu sighted. Engaging."
+horizontal_alignment = 1
+
+[node name="lifeTimer" type="Timer" parent="keeper/alert" unique_id=1699912075]
+wait_time = 5.0
+one_shot = true
+autostart = true
+
+[node name="smallClock" type="Node" parent="keeper" unique_id=2527504]
+
+[node name="dots" type="TextureRect" parent="keeper/smallClock" unique_id=409777066]
+visible = false
+offset_left = 252.0
+offset_top = 209.0
+offset_right = 273.0
+offset_bottom = 230.0
+texture = ExtResource("11_pxh0i")
+
+[node name="lifeTimer" type="Timer" parent="keeper/smallClock" unique_id=1865020660]
+wait_time = 5.0
+one_shot = true
+autostart = true
+
+[node name="TextureRect" type="TextureRect" parent="keeper/smallClock" unique_id=839209068]
+visible = false
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("12_pxh0i")
+
+[node name="crosshair" type="Control" parent="keeper" unique_id=70607555]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_left = -25.0
+offset_top = -25.0
+offset_right = 26.0
+offset_bottom = 26.0
+
+[node name="crosshair1" type="TextureRect" parent="keeper/crosshair" unique_id=958379853]
+layout_mode = 0
+offset_left = 9.0
+offset_top = 9.0
+offset_right = 42.0
+offset_bottom = 42.0
+mouse_default_cursor_shape = 2
+texture = ExtResource("19_pxi0f")
+stretch_mode = 2
+
+[node name="hitChanceBar" type="TextureProgressBar" parent="keeper/crosshair" unique_id=1193252493]
+layout_mode = 1
+anchors_preset = -1
+offset_left = 41.0
+offset_top = 25.0
+offset_right = 51.0
+offset_bottom = 26.0
+value = 100.0
+fill_mode = 1
+texture_progress = ExtResource("20_actyb")
+
+[node name="hitChanceBar2" type="TextureProgressBar" parent="keeper/crosshair" unique_id=1048864006]
+layout_mode = 1
+anchors_preset = -1
+offset_top = 25.0
+offset_right = 10.0
+offset_bottom = 26.0
+value = 100.0
+texture_progress = ExtResource("20_actyb")
+tint_progress = Color(1, 1, 0, 1)
+
+[node name="hitChanceBar3" type="TextureProgressBar" parent="keeper/crosshair" unique_id=1561414161]
+layout_mode = 1
+anchors_preset = -1
+offset_left = 25.0
+offset_top = 41.0
+offset_right = 26.0
+offset_bottom = 51.0
+value = 100.0
+fill_mode = 3
+texture_progress = ExtResource("21_b85we")
+
+[node name="hitChanceBar4" type="TextureProgressBar" parent="keeper/crosshair" unique_id=1677131715]
+layout_mode = 1
+anchors_preset = -1
+offset_left = 25.0
+offset_right = 26.0
+offset_bottom = 10.0
+value = 100.0
+fill_mode = 2
+texture_progress = ExtResource("21_b85we")
+
+[node name="hitChanceLabel" type="Label" parent="keeper/crosshair" unique_id=208279155]
+layout_mode = 0
+offset_left = 32.0
+offset_right = 72.0
+offset_bottom = 23.0
+theme = ExtResource("5_fxico")
+theme_override_colors/font_color = Color(0.23921569, 0.56078434, 0.25490198, 1)
+text = "80%"
+
+[node name="unitIcon" type="Control" parent="keeper" unique_id=880936624]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+
+[node name="unitIcon" type="TextureRect" parent="keeper/unitIcon" unique_id=1484449105]
+layout_mode = 0
+offset_left = -13.0
+offset_top = -13.0
+offset_right = 14.0
+offset_bottom = 14.0
+mouse_default_cursor_shape = 2
+texture = ExtResource("8_if1qh")
+stretch_mode = 2
+
+[node name="dots" type="TextureRect" parent="keeper/unitIcon" unique_id=441229492]
+layout_mode = 0
+offset_left = -19.0
+offset_top = -19.0
+offset_right = 20.0
+offset_bottom = 20.0
+mouse_filter = 2
+mouse_default_cursor_shape = 2
+texture = ExtResource("19_04rjj")
+stretch_mode = 2
+
+[node name="visionIcon" type="TextureRect" parent="keeper/unitIcon" unique_id=246935162]
+layout_mode = 0
+offset_left = 10.0
+offset_top = -25.0
+offset_right = 35.0
+offset_bottom = 26.0
+rotation = -6.2831855
+pivot_offset = Vector2(-10, 25)
+mouse_filter = 2
+mouse_default_cursor_shape = 2
+texture = ExtResource("20_v18y7")
+stretch_mode = 2
+
+[node name="moveIcon" type="TextureRect" parent="keeper/unitIcon" unique_id=1467845588]
+layout_mode = 0
+offset_left = 20.0
+offset_top = -2.0
+offset_right = 30.0
+offset_bottom = 3.0
+rotation = -6.2831855
+pivot_offset = Vector2(-20, 2)
+mouse_filter = 2
+mouse_default_cursor_shape = 2
+texture = ExtResource("24_3iasm")
+stretch_mode = 2
+
+[node name="unknownSound" type="TextureRect" parent="keeper" unique_id=2046735181]
+visible = false
+offset_left = -12.0
+offset_top = -9.0
+offset_right = 13.0
+offset_bottom = 10.0
+texture = SubResource("AtlasTexture_hloei")
+
+[node name="unitsOnScreen" type="Node" parent="." unique_id=1939032517]
+
+[node name="soundsOnScreen" type="Node" parent="." unique_id=968950645]
+
+[node name="effects" type="Node" parent="." unique_id=1722732584]
+
+[node name="boxSelect" type="Node" parent="." unique_id=631791858]
+
+[node name="crosshairsOnScreen" type="Node" parent="." unique_id=1401879022]
+
+[node name="debug" type="Node" parent="." unique_id=1057435189]
+
+[node name="fps" type="Label" parent="debug" unique_id=1249232695]
+modulate = Color(0.23921569, 0.56078434, 0.25490198, 1)
+offset_left = 543.0
+offset_right = 640.0
+offset_bottom = 23.0
+theme = ExtResource("5_fxico")
+text = "ArcTac CM85A1 IAR"
+horizontal_alignment = 1

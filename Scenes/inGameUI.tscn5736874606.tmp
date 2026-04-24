@@ -1,0 +1,113 @@
+[gd_scene format=3 uid="uid://bygkt1t6vtah3"]
+
+[ext_resource type="Texture2D" uid="uid://c4sj85epm35oe" path="res://assets/sprites/CM85A1 Sprite.png" id="1_2lpnb"]
+[ext_resource type="Script" uid="uid://cg62xbf1hfa7v" path="res://scripts/uiScript.gd" id="1_fn3r6"]
+[ext_resource type="FontFile" uid="uid://dg2ph6wbjtssh" path="res://assets/agency-fb-regular.ttf" id="1_qditl"]
+[ext_resource type="Texture2D" uid="uid://kjsabfs6mux3" path="res://assets/sprites/magIconHalf.png" id="3_fxico"]
+[ext_resource type="Texture2D" uid="uid://b8gqmryyo5vtj" path="res://assets/sprites/magIconEmpty.png" id="3_nidtt"]
+[ext_resource type="Texture2D" uid="uid://djgoehvraehau" path="res://assets/sprites/magIcon.png" id="4_jgapf"]
+
+[sub_resource type="Theme" id="Theme_2lpnb"]
+default_font = ExtResource("1_qditl")
+default_font_size = 16
+
+[node name="hud" type="CanvasLayer" unique_id=791108010]
+script = ExtResource("1_fn3r6")
+fullMagIcon = ExtResource("4_jgapf")
+halfMagIcon = ExtResource("3_fxico")
+emptyMagIcon = ExtResource("3_nidtt")
+
+[node name="unitElements" type="CanvasLayer" parent="." unique_id=1847393377]
+
+[node name="weaponName" type="Label" parent="unitElements" unique_id=1931196957]
+modulate = Color(0.23921569, 0.56078434, 0.25490198, 1)
+offset_left = 440.0
+offset_top = 263.0
+offset_right = 640.0
+offset_bottom = 286.0
+theme = SubResource("Theme_2lpnb")
+text = "ArcTac CM85A1 IAR"
+horizontal_alignment = 1
+
+[node name="weaponIconContainer" type="FlowContainer" parent="unitElements" unique_id=120990963]
+offset_left = 440.0
+offset_top = 305.0
+offset_right = 640.0
+offset_bottom = 360.0
+alignment = 1
+
+[node name="weaponIcon" type="TextureRect" parent="unitElements/weaponIconContainer" unique_id=97396582]
+layout_mode = 2
+texture = ExtResource("1_2lpnb")
+
+[node name="weaponMagazine" type="Label" parent="unitElements" unique_id=1678415404]
+modulate = Color(0.23921569, 0.56078434, 0.25490198, 1)
+offset_left = 482.0
+offset_top = 283.0
+offset_right = 543.0
+offset_bottom = 303.0
+theme = SubResource("Theme_2lpnb")
+text = "20/20"
+horizontal_alignment = 2
+
+[node name="mags" type="FlowContainer" parent="unitElements" unique_id=515144552]
+offset_left = 545.0
+offset_top = 285.0
+offset_right = 615.0
+offset_bottom = 301.0
+alignment = 1
+vertical = true
+
+[node name="magIcon" type="TextureRect" parent="unitElements/mags" unique_id=389528137]
+layout_mode = 2
+texture = ExtResource("4_jgapf")
+
+[node name="magIcon2" type="TextureRect" parent="unitElements/mags" unique_id=2072895289]
+layout_mode = 2
+texture = ExtResource("4_jgapf")
+
+[node name="magIcon3" type="TextureRect" parent="unitElements/mags" unique_id=480790603]
+layout_mode = 2
+texture = ExtResource("4_jgapf")
+
+[node name="alerts" type="VFlowContainer" parent="." unique_id=115779172]
+offset_left = 7.0
+offset_top = 251.0
+offset_right = 260.0
+offset_bottom = 352.0
+alignment = 2
+
+[node name="subtitle2" type="Label" parent="alerts" unique_id=1290936636]
+modulate = Color(0.23921569, 0.56078434, 0.25490198, 1)
+layout_mode = 2
+theme = SubResource("Theme_2lpnb")
+text = "Echo Zulu sighted. Engaging."
+horizontal_alignment = 1
+
+[node name="subtitle3" type="Label" parent="alerts" unique_id=330383756]
+modulate = Color(0.23921569, 0.56078434, 0.25490198, 1)
+layout_mode = 2
+theme = SubResource("Theme_2lpnb")
+text = "Echo Zulu sighted. Engaging."
+horizontal_alignment = 1
+
+[node name="keeper" type="Node" parent="." unique_id=560018876]
+
+[node name="magIcon" type="TextureRect" parent="keeper" unique_id=432478996]
+visible = false
+offset_left = 516.0
+offset_top = 299.0
+offset_right = 521.0
+offset_bottom = 305.0
+texture = ExtResource("4_jgapf")
+
+[node name="alert" type="Label" parent="keeper" unique_id=1649664530]
+visible = false
+modulate = Color(0.23921569, 0.56078434, 0.25490198, 1)
+offset_left = 7.0
+offset_top = 284.0
+offset_right = 149.0
+offset_bottom = 304.0
+theme = SubResource("Theme_2lpnb")
+text = "Echo Zulu sighted. Engaging."
+horizontal_alignment = 1

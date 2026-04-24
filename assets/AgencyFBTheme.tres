@@ -1,0 +1,68 @@
+[gd_resource type="Theme" format=3 uid="uid://bcew1d32xf0cs"]
+
+[ext_resource type="FontFile" uid="uid://dg2ph6wbjtssh" path="res://assets/agency-fb-regular.ttf" id="1_shd4v"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_u2xq5"]
+bg_color = Color(0.2838, 0.66, 0.30260998, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_c4ymh"]
+bg_color = Color(0.23921569, 0.56078434, 0.25490198, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_er30o"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.23921569, 0.56078434, 0.25490198, 1)
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_shd4v"]
+color = Color(0.23921569, 0.56078434, 0.25490198, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dpfvn"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_shd4v"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1ix7p"]
+bg_color = Color(0.23921569, 0.56078434, 0.25490198, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wtj8j"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_shd4v"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4spah"]
+bg_color = Color(0.23921569, 0.56078434, 0.25490198, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6ty5a"]
+bg_color = Color(0.2838, 0.66, 0.30260998, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kfxsx"]
+bg_color = Color(0.2838, 0.66, 0.30260998, 1)
+
+[resource]
+default_font = ExtResource("1_shd4v")
+default_font_size = 16
+Button/colors/font_color = Color(0, 0, 0, 1)
+Button/colors/font_hover_color = Color(0, 0, 0, 1)
+Button/colors/font_pressed_color = Color(0.23921569, 0.56078434, 0.25490198, 1)
+Button/styles/hover = SubResource("StyleBoxFlat_u2xq5")
+Button/styles/normal = SubResource("StyleBoxFlat_c4ymh")
+Button/styles/pressed = SubResource("StyleBoxFlat_er30o")
+HSeparator/styles/separator = SubResource("StyleBoxLine_shd4v")
+Panel/styles/panel = SubResource("StyleBoxFlat_dpfvn")
+ProgressBar/colors/font_color = Color(0, 0, 0, 1)
+ProgressBar/font_sizes/font_size = 12
+ProgressBar/styles/background = SubResource("StyleBoxFlat_shd4v")
+ProgressBar/styles/fill = SubResource("StyleBoxFlat_1ix7p")
+TabBar/colors/font_selected_color = Color(0.23921569, 0.56078434, 0.25490198, 1)
+TabBar/colors/font_unselected_color = Color(0.23921569, 0.56078434, 0.25490198, 1)
+TabBar/styles/panel = SubResource("StyleBoxFlat_wtj8j")
+TabContainer/colors/font_selected_color = Color(0.23921569, 0.56078434, 0.25490198, 1)
+TabContainer/colors/font_unselected_color = Color(0.23921569, 0.56078434, 0.25490198, 1)
+TabContainer/styles/panel = SubResource("StyleBoxEmpty_shd4v")
+VScrollBar/styles/grabber = SubResource("StyleBoxFlat_4spah")
+VScrollBar/styles/grabber_highlight = SubResource("StyleBoxFlat_6ty5a")
+VScrollBar/styles/grabber_pressed = SubResource("StyleBoxFlat_kfxsx")

@@ -1,0 +1,39 @@
+[gd_scene format=3 uid="uid://bs1kjbyqkjufl"]
+
+[ext_resource type="Texture2D" uid="uid://cb2towweybv0" path="res://assets/sprites/white2x2.png" id="1_cbs5o"]
+[ext_resource type="Script" uid="uid://c0cfocgudf5lb" path="res://scripts/losScript.gd" id="2_lf1ss"]
+[ext_resource type="Texture2D" uid="uid://b7j2lab57kmpy" path="res://assets/sprites/simpleLightTexture1080.tres" id="3_ws0m7"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_dinhu"]
+
+[node name="subVP_PlayerLoS" type="SubViewportContainer" unique_id=2026255802]
+visible = false
+offset_right = 4000.0
+offset_bottom = 4000.0
+
+[node name="SubViewport" type="SubViewport" parent="." unique_id=375733450]
+transparent_bg = true
+handle_input_locally = false
+size = Vector2i(4000, 4000)
+render_target_update_mode = 0
+
+[node name="LoS" type="Sprite2D" parent="SubViewport" unique_id=506151390]
+material = SubResource("ShaderMaterial_dinhu")
+scale = Vector2(2000, 2000)
+texture = ExtResource("1_cbs5o")
+offset = Vector2(1, 1)
+script = ExtResource("2_lf1ss")
+
+[node name="occluders" type="Node" parent="SubViewport/LoS" unique_id=1774236576]
+
+[node name="loSes" type="Node" parent="SubViewport/LoS" unique_id=1945435632]
+
+[node name="PointLight2D" type="PointLight2D" parent="SubViewport/LoS" unique_id=964523628]
+position = Vector2(0.40000004, 0.40000004)
+range_layer_min = 1
+range_layer_max = 1
+shadow_enabled = true
+texture = ExtResource("3_ws0m7")
+
+[node name="CanvasModulate2" type="CanvasModulate" parent="SubViewport" unique_id=31778305]
+color = Color(0, 0, 0, 1)
