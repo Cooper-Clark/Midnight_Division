@@ -12,12 +12,13 @@ config_version=5
 
 config/name="Midnight Division"
 run/main_scene="uid://c4ars8mpm1ygt"
-config/features=PackedStringArray("4.6", "Forward Plus")
+config/features=PackedStringArray("4.6", "C#", "Forward Plus")
 config/icon="res://icon.svg"
 
 [autoload]
 
 globals="*uid://otdi1vcwn1ji"
+SaveSystem="*uid://hg5pt3bmu6pr"
 
 [display]
 
@@ -25,6 +26,10 @@ window/size/viewport_width=640
 window/size/viewport_height=360
 window/size/mode=2
 window/stretch/mode="viewport"
+
+[dotnet]
+
+project/assembly_name="Midnight Division"
 
 [editor_plugins]
 

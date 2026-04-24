@@ -31,11 +31,11 @@ func CreateSaveList() -> void:
 ## Look into [Global] to find Dictionary of save
 func SaveGame() -> bool:
 	# This will get version in application settings
-	Global.tempGameInfoDict["Version"] = ProjectSettings.get_setting("application/config/version")
+	SaveSystem.tempGameInfoDict["Version"] = ProjectSettings.get_setting("application/config/version")
 	
 	# Then we save it to a file.
-	var file := FileAccess.open_encrypted_with_pass(Global.savesFolderFilePath, FileAccess.WRITE, "Wint1ium")
-	file.store_var(Global.tempGameInfoDict)
+	var file := FileAccess.open_encrypted_with_pass(SaveSystem.savesFolderFilePath, FileAccess.WRITE, "Wint1ium")
+	file.store_var(SaveSystem.tempGameInfoDict)
 	file.close()
 	Saved.emit()
 	return true

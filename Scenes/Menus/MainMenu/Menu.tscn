@@ -191,5 +191,3 @@ currentMenu = NodePath("..")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=2005040556]
 position = Vector2(576, 324)
-
-[connection signal="Saved" from="SaveMenu/SaveMenuManager" to="SaveMenu" method="SaveMenuManagerSaved"]
